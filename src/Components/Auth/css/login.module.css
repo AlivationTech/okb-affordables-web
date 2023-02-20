@@ -1,0 +1,143 @@
+.container {
+    font-family: 'Plus Jakarta Sans';
+    display: flex;
+    height: 100vh;
+    color: #2E2C34;
+
+}
+
+.loginImage {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #086880;
+    width: 50%;
+}
+
+.content {
+    width: 50%;
+}
+
+.loginImage h1 {
+    font-weight: 600;
+    font-size: 1.5em;
+    color: #ffff;
+    letter-spacing: 1px;
+}
+
+.loginImage p {
+    color: #ffff;
+    font-size: 0.8em;
+    font-weight: 400;
+    letter-spacing: 1px;
+
+}
+
+.loginForm {
+    text-align: center;
+    width: 55%;
+    margin: 3em auto;
+}
+
+.loginForm form {
+    text-align: left;
+}
+
+.loginForm h1 {
+    font-weight: 900;
+    font-size: 1.8em;
+    letter-spacing: 1px;
+}
+
+.loginForm p {
+    color: #83879B;
+    font-weight: 400;
+    font-size: 0.8em;
+
+}
+
+.formControl {
+    display: grid;
+    column-gap: 1em;
+    margin: 1em auto;
+}
+
+.formControl input {
+    border: 0.948875px solid #dae1e9;
+    border-radius: 7.591px;
+    height: 2.5em;
+    padding: 0.2em 0.5em;
+    font-size: 0.8em;
+    outline: none;
+}
+
+.formControl label {
+    font-weight: 600;
+    font-size: 0.8em;
+    margin: 0.5em 0;
+}
+
+.extra {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+
+}
+
+.extra label {
+    color: #83879B;
+    display: flex;
+    align-items: center;
+    gap: 0.2em;
+}
+
+.container a {
+    text-decoration: none;
+    color: #09B4DE;
+}
+
+.formButton button {
+    background: #09B4DE;
+    color: #ffff;
+    height: 2.5em;
+    text-align: center;
+    padding: 0.2em;
+    border-radius: 7.591px;
+    border: none;
+    width: 100%;
+    margin-top: 1em;
+}
+
+.formControl span {
+    color: #09B4DE;
+}
+
+.loginForm form p {
+    text-align: center;
+    color: #2E2C34;
+}
+
+
+/* tab styling */
+@media only screen and (max-width: 1200px) {
+    .loginImage {
+
+        display: none;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+}
+
+
+/* Mobile styling */
+@media screen and (max-width: 450px) {
+    .loginForm {
+        text-align: center;
+        width: 80%;
+        margin: 5em auto;
+    }
+}

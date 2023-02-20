@@ -1,0 +1,21 @@
+.container {
+    font-family: 'Plus Jakarta Sans';
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+}
+
+.navlinks {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+
+}
+
+.navlinks li {
+    color: #83879B;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.8em;
+}
