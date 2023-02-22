@@ -43,7 +43,7 @@ function Register(props) {
                         <div className={styles.formButton}>
                             <button>Register</button>
                         </div>
-                        <p>Already  have an account? <Link to="/">Sign in</Link></p>
+                        <p>Already  have an account? <Link to="/login">Sign in</Link></p>
                     </form>
 
                 </div>

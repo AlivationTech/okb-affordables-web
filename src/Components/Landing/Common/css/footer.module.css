@@ -1,0 +1,43 @@
+.container {
+    background: #000000;
+    color: #ffff;
+    padding: 1.5em 4em;
+    font-family: 'Roboto';
+}
+
+.content {
+    display: flex;
+    gap: 4em;
+}
+
+.content ul {
+    list-style: none;
+}
+
+.content h3 {
+    margin: 0;
+    font-size: 1em;
+}
+
+.content ul li {
+    font-size: 0.8em;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    margin: 1em 0;
+}
+
+.affordables {
+    width: 40%;
+}
+
+.contact {
+    width: 20%;
+}
+
+.copy {
+    display: flex;
+    justify-content: center;
+    font-size: 0.8em;
+    font-weight: 400
+}

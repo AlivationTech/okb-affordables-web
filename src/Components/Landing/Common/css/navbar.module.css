@@ -1,0 +1,140 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 2em auto;
+    align-items: center;
+    font-family: 'Nunito Sans';
+}
+
+.logo img {
+    height: 4em;
+    width: 4em;
+}
+
+.navlinks {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.navlinks li {
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+.navlinks button {
+    background: linear-gradient(0deg, #00CCFF, #00CCFF), #FFFFFF;
+    border: 0.857143px solid #00CCFF;
+    border-radius: 3.42857px;
+    color: #FFFFFF;
+    padding: 0.5em 1em;
+}
+
+.toggler {
+    display: none
+}
+
+.sidelinks {
+    display: none;
+}
+
+.close {
+    display: none;
+}
+
+/* tab styling */
+@media only screen and (max-width: 1200px) {
+
+    .navlinks {
+        display: none;
+    }
+
+    .toggler {
+        display: block;
+        font-size: 1.5em;
+        color: #00CCFF;
+    }
+
+    .sidelinks {
+        display: block;
+        position: absolute;
+        right: 0;
+        background: #00CCFF;
+        list-style: none;
+        padding: 2em;
+        top: 0;
+        margin: 0;
+        width: 20%;
+
+
+
+
+    }
+
+    .sidelinks li {
+        font-size: 1.5em;
+        font-weight: 600;
+    }
+
+    .sidelinks li button {
+        background: none;
+        border: none;
+        font-size: 1em;
+        font-weight: 500;
+        color: #FFFFFF;
+    }
+
+    .close {
+        display: flex;
+        justify-content: flex-end;
+        color: #FFFFFF;
+    }
+
+    .sidelinks li {
+        color: #FFFFFF;
+        margin: 1em auto;
+    }
+
+
+}
+
+
+/* Mobile styling */
+@media screen and (max-width: 450px) {
+    .logo img {
+        height: 2em;
+        width: 2em;
+    }
+
+    .sidelinks {
+        display: block;
+        position: absolute;
+        right: 0;
+        background: #00CCFF;
+        list-style: none;
+        padding: 2em;
+        top: 0;
+        margin: 0;
+        width: 30%;
+
+
+
+
+    }
+
+    .sidelinks li {
+        font-size: 1em;
+        font-weight: 600;
+    }
+
+    .sidelinks li button {
+        background: none;
+        border: none;
+        font-size: 0.9em;
+        font-weight: 600;
+        color: #FFFFFF;
+    }
+
+
+}

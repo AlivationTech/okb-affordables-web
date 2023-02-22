@@ -1,0 +1,56 @@
+.content {
+    padding: 1em 4em;
+}
+
+.carousel {
+    background: url('../../../Assets/carousel-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    padding: 0 3em;
+    color: #ffff;
+}
+
+.carouselContent {
+    font-family: 'Khula';
+}
+
+
+
+.carouselContent h1 span {
+    color: #00CCFF;
+}
+
+.carouselContent p {
+    color: #EBEBEB;
+    font-weight: 400;
+    font-size: 0.8em;
+}
+
+.carouselContent button {
+    background: linear-gradient(99.53deg, rgba(0, 204, 255, 0.9) -16.3%, rgba(151, 190, 3, 0.12) 100.13%);
+    border: 1px solid #97BE03;
+    border-radius: 4px;
+    color: #ffff;
+    padding: 0.5em 2em;
+    font-weight: 600;
+    font-size: 0.8em;
+}
+
+/* tab styling */
+@media only screen and (max-width: 1200px) {
+
+    .content {
+        padding: 1em 2em;
+    }
+}
+
+
+/* Mobile styling */
+@media screen and (max-width: 450px) {
+    .content {
+        padding: 1em;
+    }
+}
