@@ -7,7 +7,8 @@
 
 .content {
     display: flex;
-    gap: 4em;
+    flex-wrap: wrap;
+    gap: 3em;
 }
 
 .content ul {
@@ -40,4 +41,48 @@
     justify-content: center;
     font-size: 0.8em;
     font-weight: 400
+}
+
+
+/* tab styling */
+@media only screen and (max-width: 1200px) {
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2em;
+    }
+
+    .container {
+        background: #000000;
+        color: #ffff;
+        padding: 0.5em;
+        font-family: 'Roboto';
+    }
+
+    .affordables {
+        width: 30%;
+    }
+
+
+}
+
+
+/* Mobile styling */
+@media screen and (max-width: 450px) {
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3em;
+    }
+
+    .container {
+        background: #000000;
+        color: #ffff;
+        padding: 0.5em;
+        font-family: 'Roboto';
+    }
+
+    .affordables {
+        width: 80%;
+    }
 }
