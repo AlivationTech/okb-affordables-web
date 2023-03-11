@@ -1,82 +1,103 @@
 .content {
-    padding: 1em 4em;
+    padding: 1em 6em;
 }
 
-.carousel {
-    background: url('../../../Assets/carousel-background.png');
-
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-
-    height: 500px;
-    display: flex;
-    align-items: center;
-    padding: 0 3em;
-    color: #ffff;
-
-}
 
 
 
 .carouselContent {
     font-family: 'Khula';
-}
+     background: url('../../../Assets/carousel-background.png');
 
-
-
-.carouselContent h1 span {
-    color: #00CCFF;
-}
-
-.carouselContent p {
-    color: #EBEBEB;
-    font-weight: 400;
-    font-size: 0.8em;
-}
-
-.carouselContent button {
-    background: linear-gradient(99.53deg, rgba(0, 204, 255, 0.9) -16.3%, rgba(151, 190, 3, 0.12) 100.13%);
-    border: 1px solid #97BE03;
-    border-radius: 4px;
+     background-repeat: no-repeat;
+     background-size: cover;
+     position: relative;
+       
+    height: 600px;
+    display: flex;
+    align-items: center;
+    padding: 0 3em;
     color: #ffff;
-    padding: 0.5em 2em;
-    font-weight: 600;
-    font-size: 0.8em;
+    animation: myAnim 3s ease 0s 1 normal forwards;
+
+ 
 }
 
-.dailyOffers {
+.hideContent{
+    display: none !important;
+}
+.yellowRoof{
+    font-family: 'Khula';
+    background: url('../../../Assets/yellow-roof-background.png');
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+      
+   height: 600px;
+   display: flex;
+   align-items: center;
+   padding: 0 3em;
+   color: #ffff;
+   animation: myAnim 3s ease 0s 1 normal forwards;
+}
+@keyframes myAnim {
+	0% {
+		transform: translateX(-100px);
+	}
+
+	100% {
+		transform: translateX(0px);
+	}
+}
+.carouselButton{
     display: flex;
     justify-content: center;
+    gap: 2em;
+    margin: 2em 0;
+    align-items: center;
+}
+.carouselButton div{
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 50%;
+    padding: none;
+    border: none;
+}
+.carouselButton .inactive{
+
+background: #E1E1E1;
 
 }
+.activeCarousel{
 
-.dailyOffers .imageContainer {
-    width: 30%;
+    background: #00CCFF;
 }
-
-.dailyOffers .imageContainer img {
-    height: 15em;
-    width: 100%;
+.locations{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3em;
+    margin: 2em  0;
 }
-
-.dailyContent {
-    background: #FFFFFF;
-    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08);
-    max-width: 25%;
-    padding: 0.2em 2em;
-    height: 14.5em;
+.property{
+    max-width: 85%;
+    margin: 4em auto;
 }
+.property h2{
+    text-align: left;
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-top: 2em;
 
-.dailyContent p {
-    font-size: 0.8em;
-    margin: 0.2em 0;
 }
+.propertyList{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 2.5em;
 
-.dailyContent span {
-    color: #00CCFF;
-    font-size: 0.8em;
-    font-weight: 700;
+   
+ 
 }
 
 .content section {
@@ -85,26 +106,62 @@
 
 .content section h1 {
     text-align: center;
-    font-size: 1.2em;
+    font-size: 2em;
+    font-weight: 500;
+    margin-top: 2em;
 
+}
+.content section .contentText{
+    text-align: center;
+    font-size: 1em;
+    font-weight: 400;
+    margin: 1em;
+ 
 }
 
 .offer {
     display: flex;
     gap: 3em;
     align-items: center;
-    width: 70%;
+    width: 100%;
     margin: auto;
 }
 
 
 
-.offerContent h1 {
+.offerContent h3 {
     text-align: left;
+    font-size: 1.5em;
+    font-weight: 500;
+    margin: 0;
 }
+.offerContent h1{
+   text-align: left !important;
+   margin: 0.7em 0 !important;
+}
+.offer p{
 
-.offer p {
+color: #9A9EA7;
+font-size: 0.8em;
+margin: 0 !important;
+
+}
+.offerContent {
+    width: 40%;
+}
+.offer button{
+
+background: #00CCFF;
+border-radius: 5.47917px;
+padding: 0.9em 2.3em;
+color: #FFFFFF;
+border: none;
+font-weight: 700;
+margin-top: 2em;
+}
+.offer h6 {
     font-size: 0.8em;
+    margin: 0.2em 0 0 0 !important;
 }
 
 .content a {
@@ -115,10 +172,13 @@
     text-decoration: none;
 
 }
+.offerImage{
+    width: 50%;
+}
 
 .offerImage img {
-    width: 20em;
-    height: 15em;
+ width: 100%;
+    height: 25em;
     border-radius: 5px;
 }
 
@@ -250,7 +310,43 @@
     border: none;
 
 }
+.okbHomes{
+    display: flex;
+    padding:  3em;
+    background: #121212;
+    color: #F0F0F0;
+}
+.homeContent{
+    color: #F0F0F0;
+    padding-left: 2em;
+    margin: auto;
+}
+.homeContent h3{
+    font-weight: 400 !important;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+.homeContent p{
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+.learnMore {
+    width: 100%;
+    margin-left: 20px;
+    margin-top: 2em;
 
+}
+.learnMore h2{
+    font-weight: 400;
+    font-size: 1em;
+    color: #97BE03;
+}
+.learnMore .border{
+    width: 10em;
+    height: 3px;
+    margin-left: 20px;
+    background: #97BE03;;
+}
 /* tab styling */
 @media only screen and (max-width: 1200px) {
 

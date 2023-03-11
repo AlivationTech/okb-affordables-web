@@ -1,164 +1,191 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 //import components
 
-import Navbar from './Common/Navbar';
-import Footer from './Common/Footer';
+import Navbar from "./Common/Navbar";
+import Footer from "./Common/Footer";
+import Carousel from "./Common/Carousel";
+import LocationCard from "./Common/LocationCard";
+import PropertyCard from "./Common/PropertyCard";
+//resource imports
 
-import dummyImage from '../../Assets/dummy-one.png'
-import dummyTwo from '../../Assets/carousel-background.png'
-import styles from './css/landing.module.css'
+import dummyImage from "../../Assets/dummy-one.png";
+import dummyTwo from "../../Assets/carousel-background.png";
+import Kosofe from "../../Assets/kosofe.png";
+import Abuja from "../../Assets/abuja.png";
+import Lekki from "../../Assets/lekki.png";
+import PropertyOne from "../../Assets/propertyone.png"
+import PropertyTwo from "../../Assets/propertytwo.png"
+import PropertyThree from "../../Assets/propertythree.png"
+import PropertyFour from "../../Assets/propertyfour.png"
+import Offer from "../../Assets/offer.png"
+
+import styles from "./css/landing.module.css";
 
 
 function Landing(props) {
-    return (
-        <div className={styles.container}>
-            <div className={styles.content}>
-                <Navbar />
-                <div className={styles.carousel}>
-                    <div className={styles.carouselContent}>
-                        <h1>
-                            Buy a <span>great home</span> <br />
-                            that perfect’s for you
-                        </h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing <br /> elit eget ex sed velit pulvinar auctor.</p>
-                        <button>Get Started</button>
-                    </div>
-                </div>
-                <section>
-                    <h1>Hot Offers Today</h1>
-                    <div className={styles.dailyOffers}>
-                        <div className={styles.imageContainer}>
-                            <img src={dummyImage} alt="illustration" />
-                        </div>
-                        <div className={styles.dailyContent}>
-                            <h5>The Preferred Choice for Home Buyers and Investors</h5>
-                            <p>Spacious 5 bedroom terrace</p>
-                            <span>NGN 380 000</span>
-                            <p>Our mission is to be the foremost real estate service provider in Nigeria and beyond. Our most valuable asset is our team members. Through their expertise, we acquire, develop, and manage multifamily communities.</p>
+  const [mainCarousel, setMainCarousel] = useState(true);
+  const [yellowRoof, setYellowRoof] = useState(false);
+  const toggleCarousel = () => {
+    setMainCarousel(!mainCarousel);
+    setYellowRoof(!yellowRoof);
+  };
 
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <div className={styles.offer}>
-                        <div className={styles.offerContent}>
-                            <h1>The perfect way to get
-                                best property</h1>
-                            <p>varius in cursus sed, posuere non ipsum. In non lacus libero. Sed congue consequat erat, a auctor augue auctor id. Nam vitae lorem non metus rhoncus pharetra sed vel neque. Praesent luctus tortor faucibus gravida laoreet. Cras ut sapien sed mauris imperdiet finibus vel in velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <Link to="/">Learn more</Link>
-                        </div>
-                        <div className={styles.offerImage}>
-                            <img src={dummyTwo} alt='offers' />
-                        </div>
-                    </div>
+    useEffect(() => {
+      setTimeout(() => {
+         toggleCarousel()
+      }, 5000);
+    });
 
+  return (
+    <div className={styles.container}>
+      <div className={styles.content}>
+        <Navbar />
+        <section>
+          <Carousel
+            carousel={
+              mainCarousel ? styles.hideContent : styles.carouselContent
+            }
+            carouselHeader={
+              <h1>
+                Buy a <span>great home </span>
+                <br />
+                that perfect’s for you.
+              </h1>
+            }
+            carouselTextContent={
+              <p>
+                We are Committed to Providing and Ensuring a <br />
+                Smooth and Hassle-Free Real Estate Experience
+              </p>
+            }
+          />
 
-                </section>
+          <Carousel
+            carousel={yellowRoof ? styles.hideContent : styles.yellowRoof}
+            carouselHeader={
+              <h1>
+                Find your dream <br />
+                home at <span>Yellow Roof.</span>
+              </h1>
+            }
+            carouselTextContent={
+              <p>
+                An elegantly designed 3-bedroom apartments,
+                <br /> featuring a spacious living areas in a prime location.
+              </p>
+            }
+          />
+          <div className={styles.carouselButton}>
+            <div
+              onClick={toggleCarousel}
+              className={mainCarousel ? styles.inactive : styles.activeCarousel}
+            ></div>
+            <div
+              onClick={toggleCarousel}
+              className={yellowRoof ? styles.inactive : styles.activeCarousel}
+            ></div>
+          </div>
+        </section>
 
+        <section>
+          <h1>Explore Project Locations</h1>
+          <p className={styles.contentText}>
+            Apartments tailored to your standards with everything you need. ...
+            .
+          </p>
+          <div className={styles.locations}>
+            <LocationCard
+              locationImage={Kosofe}
+              locationTitle={"Kosofe Lagos"}
+              projects={"2 Projects"}
+            />
+            <LocationCard
+              locationImage={Lekki}
+              locationTitle={"Lekki Lagos"}
+              projects={"2 Projects"}
+            />
+            <LocationCard
+              locationImage={Abuja}
+              locationTitle={"Abuja"}
+              projects={"1 Projects"}
+            />
+          </div>
+        </section>
+        <section>
+          <div className={styles.property}>
+            <h2>Listed Properties</h2>
+            <div className={styles.propertyList}>
+              <PropertyCard propertyImage={PropertyOne} propertyTitle="JARMAL GARDENS, LEKKI." propertyDescription ="3 Bedroom Detached Terrace Duplex" propertyDetails={<ul><li>3 Bed</li> <li>48,445.87sqm</li></ul>} addressContent="Okene Street, off Alhaji Ganiyu Street, Owode"price="N 34 million (15 million outright payment)" priceDets="Payment 2: 19 million (12 million equity, 7 million mortgage)"/>
+              <PropertyCard propertyImage={PropertyTwo} propertyTitle="JARMAL GARDENS, LEKKI." propertyDescription ="3 Bedroom Detached Terrace Duplex" propertyDetails={<ul><li>3 Bed</li> <li>48,445.87sqm</li></ul>}  addressContent="Okene Street, off Alhaji Ganiyu Street, Owode"price="N 34 million (15 million outright payment)" priceDets="Payment 2: 19 million (12 million equity, 7 million mortgage)"/>
+              <PropertyCard propertyImage={PropertyThree} propertyTitle="JARMAL GARDENS, LEKKI." propertyDescription ="3 Bedroom Detached Terrace Duplex" propertyDetails={<ul><li>3 Bed</li> <li>48,445.87sqm</li></ul>} addressContent="Okene Street, off Alhaji Ganiyu Street, Owode"price="N 34 million (15 million outright payment)" priceDets="Payment 2: 19 million (12 million equity, 7 million mortgage)"/>
+              <PropertyCard propertyImage={PropertyFour} propertyTitle="JARMAL GARDENS, LEKKI." propertyDescription ="3 Bedroom Detached Terrace Duplex" propertyDetails={<ul><li>3 Bed</li> <li>48,445.87sqm</li></ul>}addressContent="Okene Street, off Alhaji Ganiyu Street, Owode"price="N 34 million (15 million outright payment)" priceDets="Payment 2: 19 million (12 million equity, 7 million mortgage)"/>
+          
             </div>
-            <section className={styles.inspection}>
-                <div>
-                    <h6>Free Bus</h6>
-                    <h3>Need to check up our sites</h3>
-                </div>
-                <button>Schedule Inspection</button>
-            </section>
-            <div className={styles.content}>
-                <section>
-                    <h1>Our Featured Properties</h1>
-                    <div className={styles.featuredProp}>
-                        <div className={styles.prop}>
-                            <div className={styles.propImage}>
-                                <img src={dummyTwo} alt={"property"} />
-                            </div>
-                            <div className={styles.propContent}>
-                                <div className={styles.propHeader}>
-                                    <h3>BETHEL ESTATE</h3>
-                                    <h5><span>N67,000.00</span>/unit</h5>
-                                </div>
-                                <div className={styles.propDescription}>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit nam eget ex sed adipiscing elit nam eget ex sed.</p>
-                                    <ul className={styles.propDescriptionList}>
-                                        <li>
-                                            <p>Bed: <span>03</span></p>
-                                            <p>Bathroom: <span>03</span></p>
-                                        </li>
-                                        <li>
-                                            <p>Room: <span>03</span></p>
-                                            <p>Parking space: <span>03</span></p>
-                                        </li>
-                                    </ul>
-                                    <button>View Details</button>
-                                </div>
-                            </div>
+          </div>
+        </section>
+        <section>
+          <div className={styles.offer}>
+            <div className={styles.offerContent}>
+              <h3>Hot Offer for Today</h3>
 
-                        </div>
-                        <div className={styles.prop}>
-                            <div className={styles.propImage}>
-                                <img src={dummyTwo} alt={"property"} />
-
-                            </div>
-                            <div className={styles.propContent}>
-                                <div className={styles.propHeader}>
-                                    <h3>BETHEL ESTATE</h3>
-                                    <h5><span>N67,000.00</span>/unit</h5>
-                                </div>
-                                <div className={styles.propDescription}>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit nam eget ex sed adipiscing elit nam eget ex sed.</p>
-                                    <ul className={styles.propDescriptionList}>
-                                        <li>
-                                            <p>Bed: <span>03</span></p>
-                                            <p>Bathroom: <span>03</span></p>
-                                        </li>
-                                        <li>
-                                            <p>Room: <span>03</span></p>
-                                            <p>Parking space: <span>03</span></p>
-                                        </li>
-                                    </ul>
-                                    <button>View Details</button>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div className={styles.prop}>
-                            <div className={styles.propImage}>
-                                <img src={dummyTwo} alt={"property"} />
-                            </div>
-                            <div className={styles.propContent}>
-                                <div className={styles.propHeader}>
-                                    <h3>BETHEL ESTATE</h3>
-                                    <h5><span>N67,000.00</span>/unit</h5>
-                                </div>
-                                <div className={styles.propDescription}>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit nam eget ex sed adipiscing elit nam eget ex sed.</p>
-                                    <ul className={styles.propDescriptionList}>
-                                        <li>
-                                            <p>Bed: <span>03</span></p>
-                                            <p>Bathroom: <span>03</span></p>
-                                        </li>
-                                        <li>
-                                            <p>Room: <span>03</span></p>
-                                            <p>Parking space: <span>03</span></p>
-                                        </li>
-                                    </ul>
-                                    <button>View Details</button>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-                </section>
+              <h6>3 Bedroom Bungalow Ensuite</h6>
+              <h1>N 15,000,000</h1>
+              <p>
+              The Preferred Choice for Home Buyers and Investors. Our mission is to be the foremost real estate service provider in Nigeria and beyond. Our most valuable asset is our team members. Through their expertise, we acquire, develop, and manage multifamily communities.
+              </p>
+             <button>Buy More</button>
             </div>
-            <Footer />
-
-
+            <div className={styles.offerImage}>
+              <img src={Offer} alt="offers" />
+            </div>
+          </div>
+        </section>
+      </div>
+      <section className={styles.inspection}>
+        <div>
+          <h6>Free Bus</h6>
+          <h3>Need to check up our sites</h3>
         </div>
-    );
+        <button>Schedule Inspection</button>
+      </section>
+      <div className={styles.content}>
+      
+        <section>
+          <div className={styles.okbHomes}>
+            <div className={styles.homeImage}>
+              <img src={dummyImage} alt="home" />
+            </div>
+            <div className={styles.homeContent}>
+              <h3>
+                OKB HOMES
+                <br />
+                Real Estate Limited
+              </h3>
+              <p>
+                We are a real estate development and investment company in
+                Nigeria dedicated to providing the most accessible real estate
+                solutions in Africa with the highest possible industry
+                standards.
+              </p>
+              <p>
+                We are one of the fastest-growing real estate companies in
+                Nigeria with an interest in the residential and retail sectors.
+                The company presently has its core operations in Lagos with
+                extension plans to other parts of Nigeria and Africa.
+              </p>
+              <div className={styles.learnMore}>
+                <h2>Learn More</h2>
+                <div className={styles.border}></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <Footer />
+    </div>
+  );
 }
 
 export default Landing;

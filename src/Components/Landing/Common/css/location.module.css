@@ -1,0 +1,28 @@
+.container{
+    width: 23%;
+    height: fit-content;
+    background: #FAFAFB;
+box-shadow: 0px 2.70849px 3.61132px rgba(153, 155, 168, 0.15);
+border-radius: 5.41698px;
+}
+.container img{
+    width: 100%;
+    border-top-right-radius: 5.41698px;
+    border-top-left-radius: 5.41698px;
+}
+.locationContent{
+    padding: 0.5em 1em;
+
+}
+.locationContent h3{
+    font-weight: 700;
+    font-size: 1em;
+    margin: 0.5em 0;
+    color: #121212;
+}
+.locationContent p{
+    font-weight: 400;
+    margin: 0.5em 0;
+    color: #908E8E;
+    font-size: 0.8em;
+}
