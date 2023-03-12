@@ -1,0 +1,39 @@
+.testimony{
+    background: #F7F7FD;
+    max-width: 70%;
+    margin: auto;
+    padding: 0.7em;
+    box-shadow: 1px -1px 8px 0px rgba(212,205,205,0.73);
+    -webkit-box-shadow: 1px -1px 8px 0px rgba(212,205,205,0.73);
+    -moz-box-shadow: 1px -1px 8px 0px rgba(212,205,205,0.73);
+    border-radius: 2px;
+}
+.testimony p{
+    color: #4D5461;
+    font-weight: 400;
+}
+.sender {
+    text-align: center;
+    color: #4D5461;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+.location{
+    text-align: center;
+    color: #00CCFF;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+.container{
+
+   animation: myAnim 3s ease 0s 1 normal forwards;
+}
+@keyframes myAnim {
+	0% {
+		transform: translateX(-100px);
+	}
+
+	100% {
+		transform: translateX(0px);
+	}
+}

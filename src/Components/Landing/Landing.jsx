@@ -7,6 +7,7 @@ import Footer from "./Common/Footer";
 import Carousel from "./Common/Carousel";
 import LocationCard from "./Common/LocationCard";
 import PropertyCard from "./Common/PropertyCard";
+import Testimonials from "./Common/Testimonals";
 //resource imports
 
 import dummyImage from "../../Assets/dummy-one.png";
@@ -24,14 +25,22 @@ import styles from "./css/landing.module.css";
 function Landing() {
   const [mainCarousel, setMainCarousel] = useState(true);
   const [yellowRoof, setYellowRoof] = useState(false);
+  const [testimony1, setTestimoy1] = useState(true)
+  const [testimony2, setTestimoy2] = useState(false)
   const toggleCarousel = () => {
     setMainCarousel(!mainCarousel);
     setYellowRoof(!yellowRoof);
+
   };
+  const toggleTestimony = ()=>{
+    setTestimoy1(!testimony1)
+    setTestimoy2(!testimony2)
+  }
 
   useEffect(() => {
     setTimeout(() => {
       toggleCarousel();
+      toggleTestimony();
     }, 5000);
   });
 
@@ -39,7 +48,7 @@ function Landing() {
     <div className={styles.container}>
       <div className={styles.content}>
         <Navbar />
-        <section>
+        <section style={{marginTop:"1em"}}>
           <Carousel
             carousel={
               mainCarousel ? styles.hideContent : styles.carouselContent
@@ -230,6 +239,28 @@ function Landing() {
                 <div className={styles.border}></div>
               </div>
             </div>
+          </div>
+        </section>
+        <section>
+        <div className={styles.testimonals}>
+        <h3>What our clients say about us</h3>
+        <h1>Testimonials</h1>
+        </div>
+        <div className={testimony1 ? styles.showContent: styles.hideContent}>
+        <Testimonials  content="I couldn't believe it when I found out that I could own my own home with such flexible payment options. Thanks to OKB Affordables, I was able to finally make my dream of owning a home come true. The entire process was seamless and the team was always available to answer my questions. I couldn't be happier with my new home!" sender ="Ajayi Oluwadamilola" location="Irawo Estate"/>
+          </div>
+          <div className={testimony2 ? styles.showContent: styles.hideContent}>
+          <Testimonials content="As a first-time homebuyer, I was nervous about the process and didn't think I could afford a quality home. But OKB Affordables made the entire process so easy and stress-free. From the moment I contacted them, they listened to my needs and helped me find the perfect home that fit my budget. Their flexible payment options made it possible for me to finally own my own home. I would highly recommend this real estate company to anyone looking for affordable and quality housing in Nigeria.!" sender ="Ifechukuwu Moses" location="Irawo Estate"/>
+</div>
+<div className={styles.carouselButton}>
+            <div
+              onClick={toggleTestimony}
+              className={testimony1 ? styles.inactive : styles.activeCarousel}
+            ></div>
+            <div
+              onClick={toggleTestimony}
+              className={testimony2 ? styles.inactive : styles.activeCarousel}
+            ></div>
           </div>
         </section>
       </div>

@@ -7,8 +7,8 @@
 }
 
 .logo img {
-    height: 4em;
-    width: 4em;
+    height: 6em;
+    width: 6em;
 }
 
 .navlinks {
@@ -19,7 +19,7 @@
 }
 
 .navlinks li {
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 600;
 }
 
@@ -73,7 +73,7 @@
     }
 
     .sidelinks li {
-        font-size: 1.5em;
+        font-size: 1em;
         font-weight: 600;
         color: #333333 !important;
     }
@@ -88,7 +88,7 @@
 
     .sidelinks a,
     .navlinks a {
-        font-size: 2em !important;
+        font-size: 1em ;
         font-weight: 600;
        
     }
