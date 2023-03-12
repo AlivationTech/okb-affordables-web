@@ -8,6 +8,7 @@ import Carousel from "./Common/Carousel";
 import LocationCard from "./Common/LocationCard";
 import PropertyCard from "./Common/PropertyCard";
 import Testimonials from "./Common/Testimonals";
+import PrinciplesCard from "./Common/PrinciplesCard";
 //resource imports
 
 import dummyImage from "../../Assets/dummy-one.png";
@@ -19,6 +20,13 @@ import PropertyTwo from "../../Assets/propertytwo.png";
 import PropertyThree from "../../Assets/propertythree.png";
 import PropertyFour from "../../Assets/propertyfour.png";
 import Offer from "../../Assets/offer.png";
+import Agent from "../../Assets/agent.png"
+import HomeIcon from "../../Assets/home-icon.png"
+import VideoIcon from "../../Assets/video-icon.png"
+import FinSpec from "../../Assets/finSpec.png"
+import Fmbn from "../../Assets/fmbn.png"
+import Hssl from "../../Assets/hssl.png"
+import Tfl from "../../Assets/tfl.png"
 
 import styles from "./css/landing.module.css";
 
@@ -32,7 +40,7 @@ function Landing() {
     setYellowRoof(!yellowRoof);
 
   };
-  const toggleTestimony = ()=>{
+  const toggleTestimony = () => {
     setTestimoy1(!testimony1)
     setTestimoy2(!testimony2)
   }
@@ -41,14 +49,14 @@ function Landing() {
     setTimeout(() => {
       toggleCarousel();
       toggleTestimony();
-    }, 5000);
+    }, 10000);
   });
 
   return (
     <div className={styles.container}>
       <div className={styles.content}>
         <Navbar />
-        <section style={{marginTop:"1em"}}>
+        <section style={{ marginTop: "1em" }}>
           <Carousel
             carousel={
               mainCarousel ? styles.hideContent : styles.carouselContent
@@ -242,17 +250,17 @@ function Landing() {
           </div>
         </section>
         <section>
-        <div className={styles.testimonals}>
-        <h3>What our clients say about us</h3>
-        <h1>Testimonials</h1>
-        </div>
-        <div className={testimony1 ? styles.showContent: styles.hideContent}>
-        <Testimonials  content="I couldn't believe it when I found out that I could own my own home with such flexible payment options. Thanks to OKB Affordables, I was able to finally make my dream of owning a home come true. The entire process was seamless and the team was always available to answer my questions. I couldn't be happier with my new home!" sender ="Ajayi Oluwadamilola" location="Irawo Estate"/>
+          <div className={styles.testimonals}>
+            <h3>What our clients say about us</h3>
+            <h1>Testimonials</h1>
           </div>
-          <div className={testimony2 ? styles.showContent: styles.hideContent}>
-          <Testimonials content="As a first-time homebuyer, I was nervous about the process and didn't think I could afford a quality home. But OKB Affordables made the entire process so easy and stress-free. From the moment I contacted them, they listened to my needs and helped me find the perfect home that fit my budget. Their flexible payment options made it possible for me to finally own my own home. I would highly recommend this real estate company to anyone looking for affordable and quality housing in Nigeria.!" sender ="Ifechukuwu Moses" location="Irawo Estate"/>
-</div>
-<div className={styles.carouselButton}>
+          <div className={testimony1 ? styles.showContent : styles.hideContent}>
+            <Testimonials content="I couldn't believe it when I found out that I could own my own home with such flexible payment options. Thanks to OKB Affordables, I was able to finally make my dream of owning a home come true. The entire process was seamless and the team was always available to answer my questions. I couldn't be happier with my new home!" sender="Ajayi Oluwadamilola" location="Irawo Estate" />
+          </div>
+          <div className={testimony2 ? styles.showContent : styles.hideContent}>
+            <Testimonials content="As a first-time homebuyer, I was nervous about the process and didn't think I could afford a quality home. But OKB Affordables made the entire process so easy and stress-free. From the moment I contacted them, they listened to my needs and helped me find the perfect home that fit my budget. Their flexible payment options made it possible for me to finally own my own home. I would highly recommend this real estate company to anyone looking for affordable and quality housing in Nigeria.!" sender="Ifechukuwu Moses" location="Irawo Estate" />
+          </div>
+          <div className={styles.carouselButton}>
             <div
               onClick={toggleTestimony}
               className={testimony1 ? styles.inactive : styles.activeCarousel}
@@ -261,6 +269,64 @@ function Landing() {
               onClick={toggleTestimony}
               className={testimony2 ? styles.inactive : styles.activeCarousel}
             ></div>
+          </div>
+        </section>
+        <section>
+          <div className={styles.agent}>
+            <div className={styles.agentImage}>
+              <div className={styles.stickyTop}>
+                <img src={VideoIcon} alt ="video-icon"/>
+                <div>
+                  <h4>Become an Agent</h4>
+                  <p>Join our team of talented agents</p>
+                </div>
+
+              </div>
+              <img src ={Agent} alt ="agent"/>
+              <div className={styles.stickyBottom}>
+            
+                <div>
+                  <h4>Earn exciting incentives</h4>
+                  <p>for selling a certain number of units.</p>
+                </div>
+                <img src={HomeIcon} alt ="home-icon"/>
+              </div>
+            </div>
+            <div className={styles.agentContent}>
+              <button className={styles.glowButton}>Earn exciting incentives</button>
+              <h2>Join our team of talented and motivated agents</h2>
+              <p>You can earn exciting incentives for selling a certain number of units or properties, including bonuses, vacation packages, and even luxury cars! Contact us today to learn more about this exciting opportunity.</p>
+               <button className={styles.button}>Join Now</button>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div className={styles.partners}>
+            <h2>Trusted by over 10,000 partners all over the <br/>country</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor orem<br/> ipsum dolor sit amet, consectetur.</p>
+            <div className={styles.partnersList}>
+              <img src ={FinSpec} alt ="partner-logo"/>
+              <img src ={Fmbn} alt ="partner-logo"/>
+              <img src ={Hssl} alt ="partner-logo"/>
+              <img src ={Tfl} alt ="partner-logo"/>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div className={styles.principle}>
+            <h2>
+            Our Principles
+            </h2>
+            <p>We rely on these six principles to inform how we operate and serve our clients. Together, these <br/>principles inform the most valuable asset we possess: culture.</p>
+            <div className={styles.principlesList}>
+              <PrinciplesCard container={styles.light} header ="QUALITY" content ="We prioritize the delivery of quality workmanship and materials in all aspects of out operations, from design to construction to customer service. "/>
+              <PrinciplesCard container={styles.dark} header ="QUALITY" content ="We prioritize the delivery of quality workmanship and materials in all aspects of out operations, from design to construction to customer service. "/>
+              <PrinciplesCard container={styles.light} header ="QUALITY" content ="We prioritize the delivery of quality workmanship and materials in all aspects of out operations, from design to construction to customer service. "/>
+              <PrinciplesCard container={styles.dark} header ="QUALITY" content ="We prioritize the delivery of quality workmanship and materials in all aspects of out operations, from design to construction to customer service. "/>
+              <PrinciplesCard container={styles.light} header ="QUALITY" content ="We prioritize the delivery of quality workmanship and materials in all aspects of out operations, from design to construction to customer service. "/>
+              <PrinciplesCard container={styles.dark} header ="QUALITY" content ="We prioritize the delivery of quality workmanship and materials in all aspects of out operations, from design to construction to customer service. "/>
+
+            </div>
           </div>
         </section>
       </div>

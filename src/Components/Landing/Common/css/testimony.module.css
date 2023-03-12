@@ -25,15 +25,20 @@
     font-size: 0.9em;
 }
 .container{
+  animation: myAnim 11s ease-in-out 1;
 
-   animation: myAnim 3s ease 0s 1 normal forwards;
 }
 @keyframes myAnim {
-	0% {
-		transform: translateX(-100px);
-	}
-
-	100% {
-		transform: translateX(0px);
-	}
+    0% {
+        transform: translateX(-100%);
+      }
+      25% {
+        transform: translateX(0);
+      }
+      75% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(200%);
+      }
 }
