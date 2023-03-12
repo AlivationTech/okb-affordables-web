@@ -19,7 +19,7 @@
 }
 
 .navlinks li {
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: 600;
 }
 
@@ -75,6 +75,7 @@
     .sidelinks li {
         font-size: 1.5em;
         font-weight: 600;
+        color: #333333 !important;
     }
 
     .sidelinks li button {
@@ -87,9 +88,9 @@
 
     .sidelinks a,
     .navlinks a {
-        font-size: 1.5em;
+        font-size: 2em !important;
         font-weight: 600;
-        color: inherit;
+       
     }
 
     .close {

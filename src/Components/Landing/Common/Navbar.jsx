@@ -25,11 +25,16 @@ function Navbar(props) {
                 <div className={styles.close} onClick={toggleSidebar}>
                     <i className='fa fa-close'></i>
                 </div>
-                <li>Home</li>
-                <li>About us</li>
-                <li>Products</li>
-                <li>Contact</li>
+                <Link to="/"> <li>Home</li></Link>
+                <Link to="/"><li>About us</li></Link>
+                <Link to="/">
+                <li>Products</li></Link>
+                <Link to="/"><li>Contact</li></Link>
+               
+            
+                <Link to ="/">
                 <li>Agent</li>
+                </Link>
                 <Link to="/login"><li>Login</li></Link>
                 <Link to="/signup"><li><button>Register</button></li></Link>
             </ul>

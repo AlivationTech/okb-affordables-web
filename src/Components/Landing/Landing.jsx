@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
 //import components
 
@@ -11,20 +10,18 @@ import PropertyCard from "./Common/PropertyCard";
 //resource imports
 
 import dummyImage from "../../Assets/dummy-one.png";
-import dummyTwo from "../../Assets/carousel-background.png";
 import Kosofe from "../../Assets/kosofe.png";
 import Abuja from "../../Assets/abuja.png";
 import Lekki from "../../Assets/lekki.png";
-import PropertyOne from "../../Assets/propertyone.png"
-import PropertyTwo from "../../Assets/propertytwo.png"
-import PropertyThree from "../../Assets/propertythree.png"
-import PropertyFour from "../../Assets/propertyfour.png"
-import Offer from "../../Assets/offer.png"
+import PropertyOne from "../../Assets/propertyone.png";
+import PropertyTwo from "../../Assets/propertytwo.png";
+import PropertyThree from "../../Assets/propertythree.png";
+import PropertyFour from "../../Assets/propertyfour.png";
+import Offer from "../../Assets/offer.png";
 
 import styles from "./css/landing.module.css";
 
-
-function Landing(props) {
+function Landing() {
   const [mainCarousel, setMainCarousel] = useState(true);
   const [yellowRoof, setYellowRoof] = useState(false);
   const toggleCarousel = () => {
@@ -32,11 +29,11 @@ function Landing(props) {
     setYellowRoof(!yellowRoof);
   };
 
-    useEffect(() => {
-      setTimeout(() => {
-         toggleCarousel()
-      }, 5000);
-    });
+  useEffect(() => {
+    setTimeout(() => {
+      toggleCarousel();
+    }, 5000);
+  });
 
   return (
     <div className={styles.container}>
@@ -113,18 +110,68 @@ function Landing(props) {
             />
           </div>
         </section>
-        <section>
-          <div className={styles.property}>
-            <h2>Listed Properties</h2>
-            <div className={styles.propertyList}>
-              <PropertyCard propertyImage={PropertyOne} propertyTitle="JARMAL GARDENS, LEKKI." propertyDescription ="3 Bedroom Detached Terrace Duplex" propertyDetails={<ul><li>3 Bed</li> <li>48,445.87sqm</li></ul>} addressContent="Okene Street, off Alhaji Ganiyu Street, Owode"price="N 34 million (15 million outright payment)" priceDets="Payment 2: 19 million (12 million equity, 7 million mortgage)"/>
-              <PropertyCard propertyImage={PropertyTwo} propertyTitle="JARMAL GARDENS, LEKKI." propertyDescription ="3 Bedroom Detached Terrace Duplex" propertyDetails={<ul><li>3 Bed</li> <li>48,445.87sqm</li></ul>}  addressContent="Okene Street, off Alhaji Ganiyu Street, Owode"price="N 34 million (15 million outright payment)" priceDets="Payment 2: 19 million (12 million equity, 7 million mortgage)"/>
-              <PropertyCard propertyImage={PropertyThree} propertyTitle="JARMAL GARDENS, LEKKI." propertyDescription ="3 Bedroom Detached Terrace Duplex" propertyDetails={<ul><li>3 Bed</li> <li>48,445.87sqm</li></ul>} addressContent="Okene Street, off Alhaji Ganiyu Street, Owode"price="N 34 million (15 million outright payment)" priceDets="Payment 2: 19 million (12 million equity, 7 million mortgage)"/>
-              <PropertyCard propertyImage={PropertyFour} propertyTitle="JARMAL GARDENS, LEKKI." propertyDescription ="3 Bedroom Detached Terrace Duplex" propertyDetails={<ul><li>3 Bed</li> <li>48,445.87sqm</li></ul>}addressContent="Okene Street, off Alhaji Ganiyu Street, Owode"price="N 34 million (15 million outright payment)" priceDets="Payment 2: 19 million (12 million equity, 7 million mortgage)"/>
-          
-            </div>
+      </div>
+
+      <section className={styles.propertySection}>
+        <div className={styles.property}>
+          <h2>Listed Properties</h2>
+          <div className={styles.propertyList}>
+            <PropertyCard
+              propertyImage={PropertyOne}
+              propertyTitle="JARMAL GARDENS, LEKKI."
+              propertyDescription="3 Bedroom Detached Terrace Duplex"
+              propertyDetails={
+                <ul>
+                  <li>3 Bed</li> <li>48,445.87sqm</li>
+                </ul>
+              }
+              addressContent="Okene Street, off Alhaji Ganiyu Street, Owode"
+              price="N 34 million (15 million outright payment)"
+              priceDets="Payment 2: 19 million (12 million equity, 7 million mortgage)"
+            />
+            <PropertyCard
+              propertyImage={PropertyTwo}
+              propertyTitle="JARMAL GARDENS, LEKKI."
+              propertyDescription="3 Bedroom Detached Terrace Duplex"
+              propertyDetails={
+                <ul>
+                  <li>3 Bed</li> <li>48,445.87sqm</li>
+                </ul>
+              }
+              addressContent="Okene Street, off Alhaji Ganiyu Street, Owode"
+              price="N 34 million (15 million outright payment)"
+              priceDets="Payment 2: 19 million (12 million equity, 7 million mortgage)"
+            />
+            <PropertyCard
+              propertyImage={PropertyThree}
+              propertyTitle="JARMAL GARDENS, LEKKI."
+              propertyDescription="3 Bedroom Detached Terrace Duplex"
+              propertyDetails={
+                <ul>
+                  <li>3 Bed</li> <li>48,445.87sqm</li>
+                </ul>
+              }
+              addressContent="Okene Street, off Alhaji Ganiyu Street, Owode"
+              price="N 34 million (15 million outright payment)"
+              priceDets="Payment 2: 19 million (12 million equity, 7 million mortgage)"
+            />
+            <PropertyCard
+              propertyImage={PropertyFour}
+              propertyTitle="JARMAL GARDENS, LEKKI."
+              propertyDescription="3 Bedroom Detached Terrace Duplex"
+              propertyDetails={
+                <ul>
+                  <li>3 Bed</li> <li>48,445.87sqm</li>
+                </ul>
+              }
+              addressContent="Okene Street, off Alhaji Ganiyu Street, Owode"
+              price="N 34 million (15 million outright payment)"
+              priceDets="Payment 2: 19 million (12 million equity, 7 million mortgage)"
+            />
           </div>
-        </section>
+        </div>
+      </section>
+      <div className={styles.content}>
         <section>
           <div className={styles.offer}>
             <div className={styles.offerContent}>
@@ -133,9 +180,13 @@ function Landing(props) {
               <h6>3 Bedroom Bungalow Ensuite</h6>
               <h1>N 15,000,000</h1>
               <p>
-              The Preferred Choice for Home Buyers and Investors. Our mission is to be the foremost real estate service provider in Nigeria and beyond. Our most valuable asset is our team members. Through their expertise, we acquire, develop, and manage multifamily communities.
+                The Preferred Choice for Home Buyers and Investors. Our mission
+                is to be the foremost real estate service provider in Nigeria
+                and beyond. Our most valuable asset is our team members. Through
+                their expertise, we acquire, develop, and manage multifamily
+                communities.
               </p>
-             <button>Buy More</button>
+              <button>Buy More</button>
             </div>
             <div className={styles.offerImage}>
               <img src={Offer} alt="offers" />
@@ -151,7 +202,6 @@ function Landing(props) {
         <button>Schedule Inspection</button>
       </section>
       <div className={styles.content}>
-      
         <section>
           <div className={styles.okbHomes}>
             <div className={styles.homeImage}>
