@@ -10,8 +10,9 @@ import LocationCard from "./Common/LocationCard";
 import PropertyCard from "./Common/PropertyCard";
 import Testimonials from "./Common/Testimonals";
 import PrinciplesCard from "./Common/PrinciplesCard";
-//resource imports
+import {GET} from "../Services/Backend"
 
+//resource imports
 import dummyImage from "../../Assets/dummy-one.png";
 import Kosofe from "../../Assets/kosofe.png";
 import Abuja from "../../Assets/abuja.png";
@@ -46,12 +47,21 @@ function Landing() {
     setTestimoy1(!testimony1)
     setTestimoy2(!testimony2)
   }
-
+const getAllProperties = async ()=>{
+  try {
+    const response = await GET("/project/user/all-project?page=0&size=10")
+     console.log(response)
+}
+catch (err) {
+    return err.response
+}
+}
   useEffect(() => {
     setTimeout(() => {
       toggleCarousel();
       toggleTestimony();
     }, 10000);
+    getAllProperties()
   });
 
   return (
@@ -120,11 +130,11 @@ function Landing() {
             <LocationCard
               locationImage={Lekki}
               locationTitle={"Lekki Lagos"}
-              projects={"2 Projects"}
+              projects={"1 Projects"}
             />
             <LocationCard
               locationImage={Abuja}
-              locationTitle={"Abuja"}
+              locationTitle={"Kuje Abuja"}
               projects={"1 Projects"}
             />
           </div>
