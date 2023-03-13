@@ -79,11 +79,11 @@ const PropertyDetails = () => {
                             <p>Bedrooms</p>
                             <h6><img src={Bed} alt ="bed"/> <span>
                                 
-                                {propertyDetail.highlight &&propertyDetail.highlight.numberOfBedrooms}</span></h6>
+                                {propertyDetail.highlight && propertyDetail.highlight.numberOfBedRooms}</span></h6>
                         </li>
                         <li>
                             <p>Bathroom</p>
-                            <h6><img src={Bath} alt ="bath"/> <span>2</span></h6>
+                            <h6><img src={Bath} alt ="bath"/> <span>{propertyDetail.highlight && propertyDetail.highlight.numberOfBath}</span></h6>
                         </li>
                         <li>
                             <p>Slots</p>
@@ -91,7 +91,7 @@ const PropertyDetails = () => {
                         </li>
                         <li>
                             <p>Status</p>
-                            <h6><img src={Tick} alt ="icon"/> <span>4 bedroom terrace duplex</span></h6>
+                            <h6><img src={Tick} alt ="icon"/> <span>{propertyDetail.highlight && propertyDetail.highlight.houseType}</span></h6>
                         </li>
                     </ul>
                     <section className={styles.about}>
