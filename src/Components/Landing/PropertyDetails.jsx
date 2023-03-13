@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 //component imports
 import Navbar from './Common/Navbar';
@@ -18,18 +18,38 @@ import Love from "../../Assets/love.png"
 import Share from "../../Assets/share.png"
 import Slot from "../../Assets/slot.png"
 import Tick from "../../Assets/tick.png"
-import PropertyImage from "../../Assets/propertyone.png"
+
+import { GET } from '../Services/Backend';
 
 const PropertyDetails = () => {
-    return (
-        <div className={styles.container}>
+    const [propertyDetail, setPropertyDetails] = useState({})
+    const location = useLocation()
+    const getPropertyDetail = async ()=>{
+
+        try {
+          const response = await GET(`/project/user/project/${location.state.id}`)
+          setPropertyDetails(response.data.data)
+         
+         
+      }
+      catch (err) {
+        return err.response
+    }
+    }
+    useEffect(()=>{
+       getPropertyDetail()
+    })
+    
+     if (propertyDetail!=={}){
+        return (
+            <div className={styles.container}>
             <div className={styles.content}>
             <Navbar/>
             <div className={styles.header}>
                 <Link to ="/"><span><img src={Back} alt ="<"/> Back</span></Link>
-                <h1>Irawo Estate</h1>
+                <h1>{propertyDetail.title}</h1>
                 <div className={styles.headerContent}>
-                    <p>7, Abimbola cresent, Irawo Ikorodu Lagos</p>
+                    <p>{propertyDetail.address}</p>
                     <div className={styles.buttons}>
                         <button>
                             <img src ={Share} alt =""/>
@@ -44,37 +64,49 @@ const PropertyDetails = () => {
                 <div className={styles.propertyContent}>
                 <div className={styles.leftContent}>
                     <div className={styles.mainImage}>
-                        <img src={PropertyImage} alt ="Property"/>
+                      
+                              {propertyDetail.imageUrl &&
+                                 <img src={propertyDetail.imageUrl.imageOne} alt ="Property"/>
+
+                              }
+
+              
+                 
                     </div>
                     <ul className={styles.highlights}>
                         <li>
                             <p>Bedrooms</p>
-                            <h6><img src={Bed} alt ="bed"/> <span>2</span></h6>
+                            <h6><img src={Bed} alt ="bed"/> <span>
+                                
+                                {propertyDetail.highlight &&propertyDetail.highlight.numberOfBedrooms}</span></h6>
                         </li>
                         <li>
-                            <p>Bedrooms</p>
+                            <p>Bathroom</p>
                             <h6><img src={Bath} alt ="bath"/> <span>2</span></h6>
                         </li>
                         <li>
-                            <p>Bedrooms</p>
+                            <p>Slots</p>
                             <h6><img src={Slot} alt ="icon"/> <span>40 slots available</span></h6>
                         </li>
                         <li>
-                            <p>Bedrooms</p>
+                            <p>Status</p>
                             <h6><img src={Tick} alt ="icon"/> <span>4 bedroom terrace duplex</span></h6>
                         </li>
                     </ul>
                     <section className={styles.about}>
                         <h2>About this Property</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget ex sed velit pulvinar auctor. Curabitur sed iaculis ante. Duis imperdiet sodales nibh, non cursus augue venenatis quis. Pellentesque venenatis finibus arcu, id dictum lorem faucibus quis. Suspendisse eget convallis libero. Vivamus quis sapien vel elit finibus dictum. Vestibulum velit massa, varius in cursus sed, posuere non ipsum. In non lacus libero. Sed congue consequat erat, a auctor augue auctor id. Nam vitae lorem non metus rhoncus pharetra sed vel neque.</p>
+                        <p>{propertyDetail.description}</p>
                         
                     </section>
                 </div>
                 <div className={styles.rightContent}>
                     <div className={styles.images}>
-                    <img src={PropertyImage} alt ="Property"/>
-                    <img src={PropertyImage} alt ="Property"/>
-                        
+                    {propertyDetail.imageUrl &&
+                    <img src={propertyDetail.imageUrl.imageTwo} alt ="Property"/>
+     }
+            {propertyDetail.imageUrl &&
+                    <img src={propertyDetail.imageUrl.imageThree} alt ="Property"/>
+            }
                     </div>
                     <section className={styles.action}>
                         <h6>Price</h6>
@@ -102,6 +134,8 @@ const PropertyDetails = () => {
             
         </div>
     );
+     }
+       
 };
 
 export default PropertyDetails;

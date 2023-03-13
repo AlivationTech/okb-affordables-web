@@ -96,6 +96,9 @@ line-height: 30px;
    display: grid;
    grid-row-gap: 2em;
 }
+.images img{
+ width: 100%;
+}
 .action{
 
 background: #FFFFFF;

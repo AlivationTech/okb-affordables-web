@@ -17,10 +17,6 @@ import dummyImage from "../../Assets/dummy-one.png";
 import Kosofe from "../../Assets/kosofe.png";
 import Abuja from "../../Assets/abuja.png";
 import Lekki from "../../Assets/lekki.png";
-import PropertyOne from "../../Assets/propertyone.png";
-import PropertyTwo from "../../Assets/propertytwo.png";
-import PropertyThree from "../../Assets/propertythree.png";
-import PropertyFour from "../../Assets/propertyfour.png";
 import Offer from "../../Assets/offer.png";
 import Agent from "../../Assets/agent.png"
 import HomeIcon from "../../Assets/home-icon.png"
@@ -38,6 +34,7 @@ function Landing() {
   const [yellowRoof, setYellowRoof] = useState(false);
   const [testimony1, setTestimoy1] = useState(true)
   const [testimony2, setTestimoy2] = useState(false)
+  const [allProperties, setAllProperties] = useState([])
   const toggleCarousel = () => {
     setMainCarousel(!mainCarousel);
     setYellowRoof(!yellowRoof);
@@ -48,9 +45,12 @@ function Landing() {
     setTestimoy2(!testimony2)
   }
 const getAllProperties = async ()=>{
+
   try {
     const response = await GET("/project/user/all-project?page=0&size=10")
-     console.log(response)
+    setAllProperties(response.data.data.projects)
+    console.log(response.data.data.projects)
+   
 }
 catch (err) {
     return err.response
@@ -145,7 +145,28 @@ catch (err) {
         <div className={styles.property}>
           <h2>Listed Properties</h2>
           <div className={styles.propertyList}>
-            <PropertyCard
+            {allProperties.map((property)=>
+                  <PropertyCard
+                  propertyImage={property.imageUrl.imageOne}
+                  propertyTitle={property.name}
+                  propertyDescription="3 Bedroom Detached Terrace Duplex"
+                  propertyDetails={
+                    <ul>
+                      <li>{property.projectHighlight.numberOfBedRooms} Bed</li> <li>{property.projectHighlight.areaOfSite}sqm</li>
+                    </ul>
+                  }
+                  addressContent={property.address}
+                  price="N 15 million outright payment"
+                  priceDets="Payment 2: 19 million (12 million equity, 7 million mortgage)"
+                  viewDetails ={()=>navigate("/PropertyDetails", {state:{
+                    id: property.id }
+                  }) }
+                 
+                />
+            )
+
+            }
+            {/* <PropertyCard
               propertyImage={PropertyOne}
               propertyTitle="JARMAL GARDENS, LEKKI."
               propertyDescription="3 Bedroom Detached Terrace Duplex"
@@ -201,7 +222,7 @@ catch (err) {
               price="N 34 million (15 million outright payment)"
               priceDets="Payment 2: 19 million (12 million equity, 7 million mortgage)"
               viewDetails ={()=>navigate("/PropertyDetails") }
-            />
+            /> */}
           </div>
         </div>
       </section>
@@ -233,7 +254,7 @@ catch (err) {
           <h6>Free Bus</h6>
           <h3>Need to check up our sites</h3>
         </div>
-        <button>Schedule Inspection</button>
+        <button><a href="https://forms.gle/ToV3VNk2vF6HMQCs9">Schedule Inspection</a></button>
       </section>
       <div className={styles.content}>
         <section>
