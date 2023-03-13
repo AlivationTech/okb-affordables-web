@@ -29,6 +29,7 @@ const PropertyDetails = () => {
         try {
           const response = await GET(`/project/user/project/${location.state.id}`)
           setPropertyDetails(response.data.data)
+          console.log(response.data.data)
          
          
       }

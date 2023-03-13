@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "http://app-624e0356-5f6c-4b1f-b1e7-8c7d43a6c61a.cleverapps.io/api/v1"
+const baseURL = "https://app-624e0356-5f6c-4b1f-b1e7-8c7d43a6c61a.cleverapps.io/api/v1"
 
 export async function GET(endpoint) {
     const url = baseURL + endpoint;
