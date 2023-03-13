@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from "../css/login.module.css"
 
-import BigLogo from "../../../Assets/bigLogo.png"
+import BigLogo from "../../../Assets/bigLogo.jpg"
 
 
 

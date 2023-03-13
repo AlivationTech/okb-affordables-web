@@ -1,6 +1,10 @@
 import React from "react";
+
+
+
 //Import style
 import styles from "./css/property.module.css";
+
 const PropertyCard = (props) => {
   return (
     <div className={styles.container}>
@@ -25,7 +29,7 @@ const PropertyCard = (props) => {
             <p>{props.priceDets}</p>
          
         </div>
-        <button>View Details</button>
+        <button onClick={props.viewDetails}>View Details</button>
       </div>
     </div>
   );

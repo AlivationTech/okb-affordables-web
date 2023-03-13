@@ -88,3 +88,55 @@ font-weight: 700;
 color: #9A9EA7;
 
 }
+
+
+/* Mobile styling */
+@media screen and (max-width: 450px) {
+    .container{
+        background: #FFFFFF;
+    border: 0.947917px solid #E4E6E8;
+    border-radius: 13.2708px;
+    width: 100%;
+    padding: 1em;
+    }
+    .container img{
+        width: 100%;
+    }
+    .address h4{
+        margin: 0em;
+        font-size: 0.9em;
+    }
+    .address p{
+
+        margin: 0.2em 0 0 0;
+        font-weight: 400;
+        font-size: 0.8em;
+        letter-spacing: -0.0947917px;
+    
+    color: #9A9EA7;
+    
+    }
+    .priceDetails button{
+
+        background: #00CCFF;
+        border-radius: 5.47917px;
+        padding: 0.5em 1em;
+        color: #FFFFFF;
+        border: none;
+        font-size: 0.8em;
+        font-weight: 700;
+        }
+        .priceDetails h4{
+            margin: 0em;
+            font-size: 0.8em;
+        }
+        .priceDetails p{
+            margin: 0.2em 0 0 0;
+            font-weight: 400;
+            font-size: 0.6em;
+            letter-spacing: -0.0947917px;
+        
+        color: #9A9EA7;
+        
+        }
+}

@@ -28,3 +28,36 @@
     font-size: 1em;
     margin-top: 2em;
 }
+@media screen and (max-width: 450px) {
+ 
+
+
+
+    .carouselHeader h1{
+        font-size: 2em !important;
+        text-align: left !important;
+        font-weight: 900 !important;
+        margin: 0;
+    }
+    
+    .carouselHeader h1 span {
+        color: #00CCFF;
+    }
+    
+    .carouselTextContent p {
+        color: #EBEBEB;
+        font-weight: 400;
+        font-size: 0.8em !important;
+    }
+    
+     .button {
+        background: linear-gradient(99.53deg, rgba(0, 204, 255, 0.9) -16.3%, rgba(151, 190, 3, 0.12) 100.13%);
+        border: 1px solid #97BE03;
+        border-radius: 4px;
+        color: #ffff;
+        padding: 0.5em 3em;
+        font-weight: 600;
+        font-size: 0.8em;
+        margin-top: 1em;
+    }
+}

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 import styles from './css/navbar.module.css'
 
-import Logo from '../../../Assets/bigLogo.png'
+import Logo from '../../../Assets/bigLogo.jpg'
 
 function Navbar(props) {
     const [toggle, setToggle] = useState(false)

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 //import components
 
@@ -31,6 +32,7 @@ import Tfl from "../../Assets/tfl.png"
 import styles from "./css/landing.module.css";
 
 function Landing() {
+  const navigate = useNavigate()
   const [mainCarousel, setMainCarousel] = useState(true);
   const [yellowRoof, setYellowRoof] = useState(false);
   const [testimony1, setTestimoy1] = useState(true)
@@ -145,6 +147,8 @@ function Landing() {
               addressContent="Okene Street, off Alhaji Ganiyu Street, Owode"
               price="N 34 million (15 million outright payment)"
               priceDets="Payment 2: 19 million (12 million equity, 7 million mortgage)"
+              viewDetails ={()=>navigate("/PropertyDetails") }
+             
             />
             <PropertyCard
               propertyImage={PropertyTwo}
@@ -158,6 +162,7 @@ function Landing() {
               addressContent="Okene Street, off Alhaji Ganiyu Street, Owode"
               price="N 34 million (15 million outright payment)"
               priceDets="Payment 2: 19 million (12 million equity, 7 million mortgage)"
+              viewDetails ={()=>navigate("/PropertyDetails") }
             />
             <PropertyCard
               propertyImage={PropertyThree}
@@ -171,6 +176,7 @@ function Landing() {
               addressContent="Okene Street, off Alhaji Ganiyu Street, Owode"
               price="N 34 million (15 million outright payment)"
               priceDets="Payment 2: 19 million (12 million equity, 7 million mortgage)"
+              viewDetails ={()=>navigate("/PropertyDetails") }
             />
             <PropertyCard
               propertyImage={PropertyFour}
@@ -184,6 +190,7 @@ function Landing() {
               addressContent="Okene Street, off Alhaji Ganiyu Street, Owode"
               price="N 34 million (15 million outright payment)"
               priceDets="Payment 2: 19 million (12 million equity, 7 million mortgage)"
+              viewDetails ={()=>navigate("/PropertyDetails") }
             />
           </div>
         </div>
