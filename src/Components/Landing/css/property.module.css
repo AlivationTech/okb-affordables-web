@@ -53,6 +53,7 @@ padding: 1em ;
 .mainImage img{
     width: 100%;
     height: 300px;
+    border-radius: 2px;
 
 }
 .highlights{
@@ -98,6 +99,7 @@ line-height: 30px;
 }
 .images img{
  width: 100%;
+ border-radius: 2px ;
 }
 .action{
 

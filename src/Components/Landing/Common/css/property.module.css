@@ -100,7 +100,7 @@ color: #9A9EA7;
         background: #FFFFFF;
     border: 0.947917px solid #E4E6E8;
     border-radius: 13.2708px;
-    width: 100%;
+    width: 90%;
     padding: 1em;
     }
     .container img{
@@ -120,6 +120,13 @@ color: #9A9EA7;
     color: #9A9EA7;
     
     }
+    .priceDetails{
+        display: flex;
+        align-items: center;
+        margin-top: 1em;
+        justify-content: space-between;
+        gap: 1em;
+    }
     .priceDetails button{
 
         background: #00CCFF;
@@ -129,6 +136,10 @@ color: #9A9EA7;
         border: none;
         font-size: 0.8em;
         font-weight: 700;
+        cursor: pointer;
+        }
+        .priceDetails button:hover{
+            opacity: 0.5;
         }
         .priceDetails h4{
             margin: 0em;

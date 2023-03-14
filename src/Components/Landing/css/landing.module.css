@@ -169,15 +169,6 @@ margin-top: 2em;
     font-size: 0.8em;
     margin: 0.2em 0 0 0 !important;
 }
-/* 
-.content a {
-
-    color: #00CCFF;
-    font-weight: 700;
-    font-size: 0.8em;
-    text-decoration: none;
-
-} */
 .offerImage{
     width: 50%;
 }
@@ -464,9 +455,76 @@ color:
 @media only screen and (max-width: 1200px) {
 
     .content {
-        padding: 1em 2em;
+        padding: 1em ;
+    }
+    .propertySection{
+        padding: 0em;
+    }
+    .okbHomes img{
+        display: none;
+    }
+    .agent{
+        display: grid;
+    }
+    .agentImage{
+        max-width: 100%;
+        margin-bottom: 5em;
+    
+    }
+    .agentImage img{
+        width: 100%;
+    }
+    .stickyBottom{
+        position: absolute;
+        top: 0%;
+        background: #FFFFFF;
+    border: 1.41979px solid rgba(51, 51, 51, 0.1);
+    box-shadow: 0px 0px 47.3264px rgba(112, 101, 240, 0.2);
+    border-radius: 7.57222px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    gap: 1em;
+    
+    left: 10%;
+    right: 10%;
+    top: 95%;
+    }
+    .agentImage h4{
+        font-size: 1em ;
+        margin: 0.5em 0;
+    }
+    .agentImage p{
+        color: #4D5461;
+        font-weight: 400;
+        font-size: 0.9em;
+        margin: 0;
+    }
+    .stickyBottom img, .stickyTop img{
+        width: 3em;
+        height: 3em;
+    }
+    .stickyTop{
+        position: absolute;
+        top: 0%;
+        background: #FFFFFF;
+    border: 1.41979px solid rgba(51, 51, 51, 0.1);
+    box-shadow: 0px 0px 47.3264px rgba(112, 101, 240, 0.2);
+    border-radius: 7.57222px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    gap: 1em;
+    left: -10%;
+    top: 10%;
     }
 }
+
+
+
+
 
 
 /* Mobile styling */
