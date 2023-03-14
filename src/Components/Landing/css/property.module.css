@@ -170,3 +170,43 @@ background: #000929 !important;
 border-radius: 7.58437px;
 margin-bottom: 2em;
 }
+
+
+@media screen and (max-width: 1200px) {
+    .content{
+        padding: 1em 2em;
+
+    }
+    .propertyContent{
+        gap: 2em;
+    }
+    .rightContent{
+        width: 40%;
+        padding: 0;
+    }
+    
+}
+@media screen  and (max-width: 450px) {
+    .content{
+        padding: 1em ;
+
+    }
+    .propertyContent{
+      display: grid;
+    }
+    .leftContent{
+        width: 90%;
+        margin: auto;
+    }
+    .highlights img{
+        display: none;
+    }
+    .rightContent{
+        width: 90%;
+        margin: auto;
+        padding: 0;
+    }
+    .headerContent{
+        display: grid;
+    }
+}
