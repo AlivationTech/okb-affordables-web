@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+
 
 //component imports
 import Navbar from './Common/Navbar'
@@ -12,7 +12,7 @@ import dummyOne from '../../Assets/dummy.png'
 import styles from './css/agent.module.css'
 
 const Agent = () => {
-    const navigate = useNavigate()
+
     return (
         <div className={styles.container}>
            <div className={styles.content}>
