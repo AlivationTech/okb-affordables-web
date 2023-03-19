@@ -1,0 +1,167 @@
+.content{
+    padding: 1em 6em;
+    text-align: center;
+}
+.imageContainer img{
+    width: 100%;
+    
+}
+.imageContainer {
+    margin: 3em 0;
+}
+.aim{
+    display: flex;
+    text-align: left;
+    gap: 4em;
+    max-width: 100%;
+    margin: 3em auto;
+    background: rgba(235, 240, 249, 0.4);
+    padding: 5em 10em;
+
+}
+.aim h5{
+    font-weight: 600;
+    font-size: 1em;
+    color: #1D2130;
+    margin: 0.5em 0;
+}
+.aim h3{
+
+color: #1D2130;
+font-weight: 600;
+font-size: 1.8em;
+margin: 0.5em 0;
+}
+.aim p{
+    font-weight: 400;
+    font-size: 0.9em;
+}
+
+
+
+.okbHomes{
+    display: flex;
+    padding:  3em;
+    background: #121212;
+    color: #F0F0F0;
+    gap: 2em;
+}
+.homeContent{
+    color: #F0F0F0;
+    padding-left: 2em;
+    margin: auto;
+    width: 45%;
+    text-align: left;
+}
+.homeContent h3{
+    font-weight: 400 !important;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+.homeContent p{
+    letter-spacing: 1px;
+    line-height: 25px;
+    font-size: 0.9em;
+}
+.homeImage {
+    width: 45%;
+}
+.homeImage img{
+    width: 100%;
+    height: 350px;
+}
+.stats{
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+.stats h3{
+    margin: 0.2em 0;
+}
+.stats p{
+    margin: 0;
+}
+
+
+.partners{
+    max-width: 80%;
+    margin: auto;
+    text-align: center;
+    margin: 8em auto ;
+}
+.partners h2{
+    font-size: 2em;
+}
+.partners p{
+    font-weight: 400;
+font-size: 1em;
+line-height: 30px;
+
+
+text-align: center;
+
+color: #5A5E51;
+
+}
+.partnersList{
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    align-items: center;
+    margin: 2em auto;
+}
+.partnersList img{
+    width: 15%;
+}
+
+
+
+/* tab styling */
+@media only screen and (max-width: 1200px) {
+    .content {
+        padding: 2em ;
+    }
+    .okbHomes img, .homeImage{
+        display: none;
+    }
+    .homeContent{
+        color: #F0F0F0;
+        padding-left: 2em;
+        margin: auto;
+        width: 100%;
+        text-align: left;
+    }
+    .aim{
+        display: grid;
+        text-align: left;
+        gap: 4em;
+        max-width: 100%;
+        margin: 3em auto;
+        background: rgba(235, 240, 249, 0.4);
+        padding: 5em;
+    
+    }
+}
+
+
+
+/* Mobile styling */
+@media screen and (max-width: 450px) {
+    .content {
+        padding: 1em;
+    }
+    .aim{
+        display: grid;
+        text-align: left;
+        gap: 4em;
+        max-width: 100%;
+        margin: 3em auto;
+        background: rgba(235, 240, 249, 0.4);
+        padding: 2em;
+    
+    }
+    .okbHomes{
+        padding: 1em;
+    }
+
+}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
 import styles from './css/navbar.module.css'
 
@@ -25,17 +25,29 @@ function Navbar(props) {
                 <div className={styles.close} onClick={toggleSidebar}>
                     <i className='fa fa-close'></i>
                 </div>
-                <Link to="/"> <li>Home</li></Link>
-                <Link to="/"><li>About us</li></Link>
-                <Link to="/">
-                <li>Products</li></Link>
-                <Link to="/"><li>Contact</li></Link>
+               
+                <NavLink to="/"
+                
+                style={({ isActive }) =>
+                (isActive ? {  color: "#00CCFF"} : { border: "none" })}> <li>Home</li></NavLink>
+                <NavLink to="/AboutUs" 
+                    style={({ isActive }) =>
+                        (isActive ? {   color: "#00CCFF" } : { border: "none" })}><li>About us</li></NavLink>
+                <NavLink to="/Property" 
+                    style={({ isActive }) =>
+                        (isActive ? { color: "#00CCFF" } : { border: "none" })}>
+                <li>Properties</li></NavLink>
+                <NavLink to="/Contact"  style={({ isActive }) =>
+                        (isActive ? {   color: "#00CCFF" } : { border: "none" })}><li>Contact</li></NavLink>
                
             
-                <Link to ="/">
+                <NavLink to ="/Agent" 
+                    style={({ isActive }) =>
+                        (isActive ? {   color: "#00CCFF" } : { border: "none" })}>
                 <li>Agent</li>
-                </Link>
-                <Link to="/login"><li>Login</li></Link>
+                </NavLink>
+                <Link to="/login" 
+                 ><li>Login</li></Link>
                 <Link to="/signup"><li><button>Register</button></li></Link>
             </ul>
 

@@ -1,0 +1,70 @@
+.container{
+    text-align: left;
+    width: 100%;
+    margin-bottom: 2em;
+}
+.title{
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+}
+.title img{
+    width: 1.5em;
+}
+.title h6{
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.mainContent{
+    display: flex;
+    padding-left: 2em;
+    align-items: center;
+}
+.mainContent h1{
+    width: 60%;
+    color: #1D2130;
+    font-weight: 600;
+}
+.description{
+    width: 40%;
+}
+.description h6{
+    font-size: 1em !important;
+    color: #1D2130 !important;
+    margin: 0.2em 0 !important;
+}
+.description p, .titleSection p {
+    color: #1D2130 !important;
+    font-weight: 400 !important;
+    font-size: 0.9em !important;
+}
+.titleSection{
+    width: 60%;
+}
+@media screen and (max-width: 1200px) {
+    .mainContent{
+        display: grid;
+        padding-left: 2em;
+        align-items: center;
+    }
+    .titleSection{
+        width: 100%;
+    }
+    .description{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 450px) {
+    .mainContent{
+        display: grid;
+        padding-left: 2em;
+        align-items: center;
+    }
+    .titleSection{
+        width: 100%;
+    }
+    .description{
+        width: 100%;
+    }
+}

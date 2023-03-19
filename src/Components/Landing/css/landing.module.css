@@ -101,7 +101,7 @@ background: #E1E1E1;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-row-gap: 2.5em;
-
+    grid-column-gap: 8em;
    
  
 }
@@ -276,6 +276,10 @@ padding: 2em 4em;
 .agentImage{
     position: relative;
 
+
+}
+.agentImage .image{
+    width: 28em;
 }
 .stickyTop{
     position: absolute;
@@ -659,6 +663,8 @@ gap: 1em;
 left: -10%;
 top: 10%;
 }
-
+.agentImage .image{
+    width: 18em;
+}
 
 }

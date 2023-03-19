@@ -2,7 +2,7 @@
     background: #FFFFFF;
 border: 0.947917px solid #E4E6E8;
 border-radius: 13.2708px;
-width: 80%;
+width: 100%;
 padding: 1em;
 }
 .container img{
@@ -93,7 +93,16 @@ color: #9A9EA7;
 
 }
 
-
+/* Tab styling */
+@media screen and (max-width: 1200px) {
+    .container{
+        background: #FFFFFF;
+    border: 0.947917px solid #E4E6E8;
+    border-radius: 13.2708px;
+    width: 90%;
+    padding: 1em;
+    }
+}
 /* Mobile styling */
 @media screen and (max-width: 450px) {
     .container{

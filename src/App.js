@@ -6,6 +6,11 @@ import Register from "./Components/Auth/Register";
 import ForgotPassword from "./Components/Auth/ForgotPassword";
 import Landing from "./Components/Landing/Landing";
 import PropertyDetails from "./Components/Landing/PropertyDetails";
+import Agent from "./Components/Landing/Agent";
+import AgentForm from "./Components/Landing/AgentForm";
+import AboutUs from "./Components/Landing/AboutUs"
+import PropertiesList from "./Components/Landing/PropertiesList";
+import Contact from "./Components/Landing/Contact";
 
 //styles import
 import './App.css';
@@ -18,7 +23,12 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/signup" element={<Register />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
-        <Route path="/PropertyDetails" element={<PropertyDetails/>}/>
+        <Route path="/Property/Details" element={<PropertyDetails/>}/>
+        <Route path="/Agent" element={<Agent/>}/>
+        <Route path="/Agent/Form" element={<AgentForm/>}/>
+        <Route path="/AboutUs" element={<AboutUs/>}/>
+        <Route path="/Property" element={<PropertiesList/>}/>
+        <Route path="/Contact" element={<Contact/>}/>
       </Routes>
     </Router>
 

@@ -158,7 +158,7 @@ catch (err) {
                   addressContent={property.address}
                   price="N 15 million outright payment"
                   priceDets="Payment 2: 19 million (12 million equity, 7 million mortgage)"
-                  viewDetails ={()=>navigate("/PropertyDetails", {state:{
+                  viewDetails ={()=>navigate("/Property/Details", {state:{
                     id: property.id }
                   }) }
                  
@@ -166,63 +166,7 @@ catch (err) {
             )
 
             }
-            {/* <PropertyCard
-              propertyImage={PropertyOne}
-              propertyTitle="JARMAL GARDENS, LEKKI."
-              propertyDescription="3 Bedroom Detached Terrace Duplex"
-              propertyDetails={
-                <ul>
-                  <li>3 Bed</li> <li>48,445.87sqm</li>
-                </ul>
-              }
-              addressContent="Okene Street, off Alhaji Ganiyu Street, Owode"
-              price="N 34 million (15 million outright payment)"
-              priceDets="Payment 2: 19 million (12 million equity, 7 million mortgage)"
-              viewDetails ={()=>navigate("/PropertyDetails") }
-             
-            />
-            <PropertyCard
-              propertyImage={PropertyTwo}
-              propertyTitle="JARMAL GARDENS, LEKKI."
-              propertyDescription="3 Bedroom Detached Terrace Duplex"
-              propertyDetails={
-                <ul>
-                  <li>3 Bed</li> <li>48,445.87sqm</li>
-                </ul>
-              }
-              addressContent="Okene Street, off Alhaji Ganiyu Street, Owode"
-              price="N 34 million (15 million outright payment)"
-              priceDets="Payment 2: 19 million (12 million equity, 7 million mortgage)"
-              viewDetails ={()=>navigate("/PropertyDetails") }
-            />
-            <PropertyCard
-              propertyImage={PropertyThree}
-              propertyTitle="JARMAL GARDENS, LEKKI."
-              propertyDescription="3 Bedroom Detached Terrace Duplex"
-              propertyDetails={
-                <ul>
-                  <li>3 Bed</li> <li>48,445.87sqm</li>
-                </ul>
-              }
-              addressContent="Okene Street, off Alhaji Ganiyu Street, Owode"
-              price="N 34 million (15 million outright payment)"
-              priceDets="Payment 2: 19 million (12 million equity, 7 million mortgage)"
-              viewDetails ={()=>navigate("/PropertyDetails") }
-            />
-            <PropertyCard
-              propertyImage={PropertyFour}
-              propertyTitle="JARMAL GARDENS, LEKKI."
-              propertyDescription="3 Bedroom Detached Terrace Duplex"
-              propertyDetails={
-                <ul>
-                  <li>3 Bed</li> <li>48,445.87sqm</li>
-                </ul>
-              }
-              addressContent="Okene Street, off Alhaji Ganiyu Street, Owode"
-              price="N 34 million (15 million outright payment)"
-              priceDets="Payment 2: 19 million (12 million equity, 7 million mortgage)"
-              viewDetails ={()=>navigate("/PropertyDetails") }
-            /> */}
+           
           </div>
         </div>
       </section>
@@ -320,7 +264,7 @@ catch (err) {
                 </div>
 
               </div>
-              <img src ={Agent} alt ="agent"/>
+              <img className ={styles.image}src ={Agent} alt ="agent"/>
               <div className={styles.stickyBottom}>
             
                 <div>
@@ -331,10 +275,10 @@ catch (err) {
               </div>
             </div>
             <div className={styles.agentContent}>
-              <button className={styles.glowButton}>Earn exciting incentives</button>
+          
               <h2>Join our team of talented and motivated agents</h2>
               <p>You can earn exciting incentives for selling a certain number of units or properties, including bonuses, vacation packages, and even luxury cars! Contact us today to learn more about this exciting opportunity.</p>
-               <button className={styles.button}>Join Now</button>
+               <button className={styles.button} onClick={()=> navigate("/Agent/Form")}>Join Now</button>
             </div>
           </div>
         </section>
