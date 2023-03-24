@@ -68,7 +68,8 @@ const PropertyDetails = () => {
                                 <div className={styles.mainImage}>
 
                                     {propertyDetail.imageUrl &&
-                                        <img src={propertyDetail.imageUrl.imageOne} alt="Property" />
+                                        <img src={propertyDetail.imageUrl.featuredImage
+                                        } alt="Property" />
 
                                     }
 

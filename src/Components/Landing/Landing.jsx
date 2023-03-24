@@ -157,7 +157,7 @@ catch (err) {
           <div className={styles.propertyList}>
             {allProperties.map((property)=>
                   <PropertyCard
-                  propertyImage={property.imageUrl.imageOne}
+                  propertyImage={property.imageUrl.featuredImage                  }
                   propertyTitle={property.name}
                   propertyDescription="3 Bedroom Detached Terrace Duplex"
                   propertyDetails={
@@ -234,7 +234,7 @@ catch (err) {
                 The company presently has its core operations in Lagos with
                 extension plans to other parts of Nigeria and Africa.
               </p>
-              <div className={styles.learnMore} onClick={()=>navigate("/AboutUs")}>
+              <div className={styles.learnMore} style={{cursor: "pointer"}}onClick={()=>navigate("/AboutUs")}>
                 <h2 >Learn More</h2>
                 <div className={styles.border}></div>
               </div>
