@@ -4,7 +4,16 @@
 
 
 
-
+.carouselContent .button , .yellowRoof .button{
+    background: linear-gradient(99.53deg, rgba(0, 204, 255, 0.9) -16.3%, rgba(151, 190, 3, 0.12) 100.13%);
+    border: 1px solid #97BE03;
+    border-radius: 4px;
+    color: #ffff;
+    padding: 0.5em 3em;
+    font-weight: 600;
+    font-size: 1em;
+    margin-top: 2em;
+}
 .carouselContent {
     font-family: 'Khula';
      background: url('../../../Assets/carousel-background.png');
@@ -101,7 +110,7 @@ background: #E1E1E1;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-row-gap: 2.5em;
-    grid-column-gap: 8em;
+    grid-column-gap: 2em;
    
  
 }
@@ -227,6 +236,7 @@ padding: 2em 4em;
     font-weight: 400 !important;
     letter-spacing: 1px;
     line-height: 25px;
+    font-size: 1.5em;
 }
 .homeContent p{
     letter-spacing: 1px;
@@ -524,6 +534,14 @@ color:
     left: -10%;
     top: 10%;
     }
+    .propertyList{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 2.5em;
+        grid-column-gap: 2em;
+       
+     
+    }
 }
 
 
@@ -570,6 +588,7 @@ color:
 .propertyList{
     display: grid;
     grid-template-columns: 1fr ;
+
     grid-row-gap: 2em;
 
    

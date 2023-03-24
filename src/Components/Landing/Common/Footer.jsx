@@ -25,7 +25,7 @@ function Footer(props) {
                 </ul>
                 <ul className={styles.affordables}>
                     <h3>The Affordables</h3>
-                    <li>Larius in cursus sed, posuere non ipsum. In non lacus libero. Sed congue consequat erat, a auctor augue auctor id. Nam vitae lorem non metus rhoncus pharetra sed vel neque. Praesent luctus tortor faucibus gravida laoreet. Cras ut sapien sed mauris imperdiet finibus vel in velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>OKB Affordables is a real estate company that provides affordable housing options with flexible payment plans. Our mission is to make homeownership more accessible and affordable for everyone. Contact us today to learn more about our services and find your perfect home.</li>
 
                 </ul>
             </div>

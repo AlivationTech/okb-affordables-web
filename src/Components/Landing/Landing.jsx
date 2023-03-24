@@ -30,8 +30,8 @@ import styles from "./css/landing.module.css";
 
 function Landing() {
   const navigate = useNavigate()
-  const [mainCarousel, setMainCarousel] = useState(true);
-  const [yellowRoof, setYellowRoof] = useState(false);
+  const [mainCarousel, setMainCarousel] = useState(false);
+  const [yellowRoof, setYellowRoof] = useState(true);
   const [testimony1, setTestimoy1] = useState(true)
   const [testimony2, setTestimoy2] = useState(false)
   const [allProperties, setAllProperties] = useState([])
@@ -50,7 +50,7 @@ const getAllProperties = async ()=>{
     const response = await GET("/project/user/all-project?page=0&size=10")
     setAllProperties(response.data.data.projects)
     console.log(response.data.data.projects)
-   
+
 }
 catch (err) {
     return err.response
@@ -62,7 +62,7 @@ catch (err) {
       toggleTestimony();
     }, 10000);
     getAllProperties()
-  });
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -86,6 +86,11 @@ catch (err) {
                 Smooth and Hassle-Free Real Estate Experience
               </p>
             }
+             button={
+              <button className={styles.button}
+               onClick={()=>navigate("/Property")}>View Projects</button>
+             }
+           
           />
 
           <Carousel
@@ -102,6 +107,11 @@ catch (err) {
                 <br /> featuring a spacious living areas in a prime location.
               </p>
             }
+            button={
+              <button className={styles.button}
+               onClick={()=>navigate("/Property")}>View Details</button>
+             }
+           
           />
           <div className={styles.carouselButton}>
             <div
@@ -124,23 +134,23 @@ catch (err) {
           <div className={styles.locations}>
             <LocationCard
               locationImage={Kosofe}
-              locationTitle={"Kosofe Lagos"}
+              locationTitle={"Kosofe, Lagos"}
               projects={"2 Projects"}
             />
             <LocationCard
               locationImage={Lekki}
-              locationTitle={"Lekki Lagos"}
+              locationTitle={"Lekki, Lagos"}
               projects={"1 Projects"}
             />
             <LocationCard
               locationImage={Abuja}
-              locationTitle={"Kuje Abuja"}
+              locationTitle={"Kuje, Abuja"}
               projects={"1 Projects"}
             />
           </div>
         </section>
       </div>
-
+ 
       <section className={styles.propertySection}>
         <div className={styles.property}>
           <h2>Listed Properties</h2>
@@ -198,7 +208,7 @@ catch (err) {
           <h6>Free Bus</h6>
           <h3>Need to check up our sites</h3>
         </div>
-        <button><a href="https://forms.gle/ToV3VNk2vF6HMQCs9">Schedule Inspection</a></button>
+        <button><a href="https://forms.gle/ToV3VNk2vF6HMQCs9" target="_blank" rel="noreferrer" >Schedule Inspection</a></button>
       </section>
       <div className={styles.content}>
         <section>
@@ -208,7 +218,7 @@ catch (err) {
             </div>
             <div className={styles.homeContent}>
               <h3>
-                OKB HOMES
+                OKB AFFORDABLES
                 <br />
                 Real Estate Limited
               </h3>
@@ -224,10 +234,11 @@ catch (err) {
                 The company presently has its core operations in Lagos with
                 extension plans to other parts of Nigeria and Africa.
               </p>
-              <div className={styles.learnMore}>
-                <h2>Learn More</h2>
+              <div className={styles.learnMore} onClick={()=>navigate("/AboutUs")}>
+                <h2 >Learn More</h2>
                 <div className={styles.border}></div>
               </div>
+         
             </div>
           </div>
         </section>
@@ -284,8 +295,8 @@ catch (err) {
         </section>
         <section>
           <div className={styles.partners}>
-            <h2>Trusted by over 10,000 partners all over the <br/>country</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor orem<br/> ipsum dolor sit amet, consectetur.</p>
+            <h2>Trusted by over 100 partners all over the <br/>country</h2>
+            <p>We take great pride in our reputation as a trusted real estate developer through partners who trust us to provide affordable<br/> and quality housing options to their clients.</p>
             <div className={styles.partnersList}>
               <img src ={FinSpec} alt ="partner-logo"/>
               <img src ={Fmbn} alt ="partner-logo"/>

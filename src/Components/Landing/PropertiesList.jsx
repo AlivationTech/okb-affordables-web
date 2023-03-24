@@ -13,18 +13,21 @@ import styles from "./css/propertylist.module.css";
 const PropertiesList = () => {
   const navigate = useNavigate();
   const [allProperties, setAllProperties] = useState([]);
+ 
   const getAllProperties = async () => {
     try {
       const response = await GET("/project/user/all-project?page=0&size=10");
+
       setAllProperties(response.data.data.projects);
-      console.log(response.data.data.projects);
+
+    
     } catch (err) {
       return err.response;
     }
   };
   useEffect(() => {
     getAllProperties();
-  });
+  }, []);
   return (
     <div className={styles.container}>
       <div className={styles.content}>
