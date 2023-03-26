@@ -51,6 +51,32 @@
    animation: myAnim 11s ease-in-out 1;
 
 }
+.whatsapp{
+    position: fixed;
+    top: 70%;
+    right: 3%;
+
+}
+.whatsapp img{
+    margin-left: -1.7em;
+    margin-top: -1.5em;
+}
+.whatsapp .chat{
+    background: #FFFFFF;
+    box-shadow: 0.902724px 0.902724px 9.02724px #AAAAAA;
+    border-radius: 4.51362px;
+
+}
+.whatsapp .chat h3, .whatsapp .chat p{
+    font-size: 0.8em;
+    margin: 0;
+    padding: 0.2em 0.5em;
+    color: #333333;
+}
+.whatsapp section{
+    display: flex;
+    align-items: flex-start;
+}
 @keyframes myAnim {
     0% {
         transform: translateX(-100%);
@@ -467,7 +493,12 @@ color:
 
 /* tab styling */
 @media only screen and (max-width: 1200px) {
-
+    .whatsapp{
+        position: fixed;
+        top: 50%;
+        right: 0%;
+    
+    }
     .content {
         padding: 1em ;
     }
@@ -652,6 +683,12 @@ gap: 1em;
 left: 10%;
 right: 10%;
 top: 80%;
+}
+.whatsapp{
+    position: fixed;
+    top: 65%;
+    right: 0%;
+
 }
 .agentImage h4{
     font-size: 0.9em ;

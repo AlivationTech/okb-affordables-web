@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 //Component Imports
 import Navbar from "./Common/Navbar";
 import Footer from "./Common/Footer";
@@ -12,11 +12,13 @@ import styles from "./css/propertylist.module.css";
 
 const PropertiesList = () => {
   const navigate = useNavigate();
+  const location = useLocation()
   const [allProperties, setAllProperties] = useState([]);
  
   const getAllProperties = async () => {
     try {
-      const response = await GET("/project/user/all-project?page=0&size=10");
+    
+      const response = await GET(`/project/user/all-project?page=0&size=10${location.state.city}`);
 
       setAllProperties(response.data.data.projects);
 
@@ -40,7 +42,7 @@ const PropertiesList = () => {
           <div className={styles.propertyList}>
             {allProperties.map((property) => (
               <PropertyCard
-                propertyImage={property.imageUrl.imageOne}
+                propertyImage={property.imageUrl.featuredImage}
                 propertyTitle={property.name}
                 propertyDescription="3 Bedroom Detached Terrace Duplex"
                 propertyDetails={

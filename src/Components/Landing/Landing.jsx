@@ -25,6 +25,7 @@ import FinSpec from "../../Assets/finSpec.png"
 import Fmbn from "../../Assets/fmbn.png"
 import Hssl from "../../Assets/hssl.png"
 import Tfl from "../../Assets/tfl.png"
+import Whatsapp from "../../Assets/whatsapp.png"
 
 import styles from "./css/landing.module.css";
 
@@ -109,7 +110,9 @@ catch (err) {
             }
             button={
               <button className={styles.button}
-               onClick={()=>navigate("/Property")}>View Details</button>
+               onClick={()=>navigate("/Property/Details", {state:{
+                id:"640ed519ac55ef4a93a574f1" }
+              }) }>View Details</button>
              }
            
           />
@@ -124,6 +127,17 @@ catch (err) {
             ></div>
           </div>
         </section>
+        <div className={styles.whatsapp}>
+        <a href="https://wa.link/t6dzp6" target="_blank" rel="noreferrer" > 
+          <section>
+            <div className={styles.chat}>
+              <h3>Hi I'm Ali</h3>
+              <p>I can give you more information</p>
+            </div>
+          <img src={Whatsapp} alt ="whatsapp"/>
+          </section>
+        </a>
+        </div>
 
         <section>
           <h1>Explore Project Locations</h1>
@@ -136,16 +150,31 @@ catch (err) {
               locationImage={Kosofe}
               locationTitle={"Kosofe, Lagos"}
               projects={"2 Projects"}
+              onClick={()=>navigate("/Property ", {
+                state: {
+                  city: "Kosofe"
+              }
+              })}
             />
             <LocationCard
               locationImage={Lekki}
               locationTitle={"Lekki, Lagos"}
               projects={"1 Projects"}
+              onClick={()=>navigate("/Property ", {
+                state: {
+                  city: "Lekki"
+              }
+              })}
             />
             <LocationCard
               locationImage={Abuja}
               locationTitle={"Kuje, Abuja"}
               projects={"1 Projects"}
+              onClick={()=>navigate("/Property ", {
+                state: {
+                  city: "Kuje"
+              }
+              })}
             />
           </div>
         </section>
@@ -313,11 +342,11 @@ catch (err) {
             <p>We rely on these six principles to inform how we operate and serve our clients. Together, these <br/>principles inform the most valuable asset we possess: culture.</p>
             <div className={styles.principlesList}>
               <PrinciplesCard container={styles.light} header ="QUALITY" content ="We prioritize the delivery of quality workmanship and materials in all aspects of out operations, from design to construction to customer service. "/>
-              <PrinciplesCard container={styles.dark} header ="QUALITY" content ="We prioritize the delivery of quality workmanship and materials in all aspects of out operations, from design to construction to customer service. "/>
-              <PrinciplesCard container={styles.light} header ="QUALITY" content ="We prioritize the delivery of quality workmanship and materials in all aspects of out operations, from design to construction to customer service. "/>
-              <PrinciplesCard container={styles.dark} header ="QUALITY" content ="We prioritize the delivery of quality workmanship and materials in all aspects of out operations, from design to construction to customer service. "/>
-              <PrinciplesCard container={styles.light} header ="QUALITY" content ="We prioritize the delivery of quality workmanship and materials in all aspects of out operations, from design to construction to customer service. "/>
-              <PrinciplesCard container={styles.dark} header ="QUALITY" content ="We prioritize the delivery of quality workmanship and materials in all aspects of out operations, from design to construction to customer service. "/>
+              <PrinciplesCard container={styles.dark} header ="INTEGRITY" content ="We ensure that we always act with integrity in our dealings with clients, suppliers, and other stakeholders.  "/>
+              <PrinciplesCard container={styles.light} header ="SAFETY" content ="We prioritise safety in all our operations, including worker safety and the safety of customers and the public. "/>
+              <PrinciplesCard container={styles.dark} header ="SUSTAINABILITY" content ="We strive to minimise our environmental impact and promote sustainability in its operations. "/>
+              <PrinciplesCard container={styles.light} header ="CUSTOMER SERVICE" content ="We prfioritize customer service and satisfaction, and make every effort to meet or exceed customer expectations.er service. "/>
+              <PrinciplesCard container={styles.dark} header ="INNOVATION" content ="We embrace innovation and stay up-to-date with the latest industry trends and technologies."/>
 
             </div>
           </div>

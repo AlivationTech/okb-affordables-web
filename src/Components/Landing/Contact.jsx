@@ -32,10 +32,10 @@ const Contact = () => {
                     <h6>Email Address</h6>
                     <p>info@okbffordables.ng</p>
                     <div className={styles.socialLink}>
-                        <img src={Twitter} alt="twitter" />
-                        <img src={Facebook} alt="facebook" />
-                        <img src={Linkedin} alt="linkedin" />
-                        <img src={Instagram} alt="instagram" />
+                    <a href="" target="_blank" rel="noreferrer" ><img src={Twitter} alt="twitter" /></a>
+                    <a href="https://www.facebook.com/profile.php?id=100077621514621" target="_blank" rel="noreferrer" > <img src={Facebook} alt="facebook" /></a>
+                    <a href="https://www.linkedin.com/in/okb-affordables-90246a223/" target="_blank" rel="noreferrer" ><img src={Linkedin} alt="linkedin" /></a>
+                    <a href="https://www.instagram.com/okbaffordables/" target="_blank" rel="noreferrer" >  <img src={Instagram} alt="instagram" /></a>
                     </div>
                 </>} />
 
