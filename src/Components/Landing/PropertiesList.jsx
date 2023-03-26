@@ -14,31 +14,87 @@ const PropertiesList = () => {
   const navigate = useNavigate();
   const location = useLocation()
   const [allProperties, setAllProperties] = useState([]);
- 
+  const [filter, setFilter] = useState("")
+  const [filterToggle, setFilterToggle] = useState(false)
+
+  const toggleFilter = () => {
+    setFilterToggle(!filterToggle)
+
+  }
+
   const getAllProperties = async () => {
+  
     try {
-    
-      const response = await GET(`/project/user/all-project?page=0&size=10${location.state.city}`);
 
-      setAllProperties(response.data.data.projects);
+ 
+      if (location.state === null) {
+        if (filter === "") {
+          const response = await GET(`/project/user/all-project?page=0&size=10`);
 
-    
+
+          setAllProperties(response.data.data.projects);
+        }
+        else {
+
+          const response = await GET(`/project/user/all-project?page=0&size=10${filter}`);
+
+
+          setAllProperties(response.data.data.projects);
+        }
+
+      }
+      else {
+
+        const response = await GET(`/project/user/all-project?page=0&size=10${location.state.city}`);
+
+
+        setAllProperties(response.data.data.projects);
+      }
+
+
+
     } catch (err) {
       return err.response;
     }
   };
   useEffect(() => {
+    console.log(filter)
     getAllProperties();
-  }, []);
+  }, [filter]);
   return (
     <div className={styles.container}>
       <div className={styles.content}>
         <Navbar />
         <div className={styles.property}>
-         <div className={styles.header}>
+          <div className={styles.header}>
             <h2>Listed Properties</h2>
-            <button>Filter by location</button>
-         </div>
+            <div className={styles.filterSec}>
+            <button onClick={toggleFilter}>Filter by location</button>
+            {filterToggle &&
+              <ul className={styles.locationList}>
+                <li onClick={() => {
+                  setFilter("&city=kosofe");
+                  setFilterToggle(false)
+             
+                }}>Kosofe</li>
+                <li  onClick={() => {
+                  setFilter("&city=kuje");
+                  setFilterToggle(false)
+          
+                }}>Kuje</li>
+                <li  onClick={() => {
+                  setFilter("&city=lekki");
+                  setFilterToggle(false)
+            
+                }}>Lekki</li>
+              </ul>
+
+
+            }
+
+            </div>
+         
+          </div>
           <div className={styles.propertyList}>
             {allProperties.map((property) => (
               <PropertyCard

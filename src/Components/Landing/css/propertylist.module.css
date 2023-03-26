@@ -37,8 +37,31 @@ padding: 0.5em 1.5em;
 
 
 
+.filterSec{
+    position: relative;
 
+}
+.locationList{
 
+    position: absolute;
+    top: 70%;
+    z-index: 1;
+    background: #FFFFFF;
+    width: 100%;
+    border: 1.42207px solid #E0DEF7;
+    list-style: none;
+    display: grid;
+    text-align: center;
+    padding-left: 0;
+
+}
+.locationList li{
+    border: 0.2px solid #E0DEF7;
+    cursor: pointer;
+}
+.locationList li :hover{
+    opacity: 0.5;
+}
 
 
 /* tab styling */

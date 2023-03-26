@@ -4,6 +4,7 @@
     background: #FAFAFB;
 box-shadow: 0px 2.70849px 3.61132px rgba(153, 155, 168, 0.15);
 border-radius: 5.41698px;
+cursor: pointer;
 }
 .container img{
     width: 100%;
