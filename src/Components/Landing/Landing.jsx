@@ -131,7 +131,7 @@ catch (err) {
         <a href="https://wa.link/t6dzp6" target="_blank" rel="noreferrer" > 
           <section>
             <div className={styles.chat}>
-              <h3>Hi I'm Ali</h3>
+              <h3>Hi I'm Khadijat</h3>
               <p>I can give you more information</p>
             </div>
           <img src={Whatsapp} alt ="whatsapp"/>
@@ -224,7 +224,9 @@ catch (err) {
                 their expertise, we acquire, develop, and manage multifamily
                 communities.
               </p>
-              <button>Buy More</button>
+              <button  onClick={()=>navigate("/Property/Details", {state:{
+                id:"640ed519ac55ef4a93a574f1" }
+              }) }>Buy More</button>
             </div>
             <div className={styles.offerImage}>
               <img src={Offer} alt="offers" />

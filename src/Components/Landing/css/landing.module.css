@@ -54,7 +54,7 @@
 .whatsapp{
     position: fixed;
     top: 70%;
-    right: 3%;
+    right: 2%;
 
 }
 .whatsapp img{
@@ -70,7 +70,7 @@
 .whatsapp .chat h3, .whatsapp .chat p{
     font-size: 0.8em;
     margin: 0;
-    padding: 0.2em 0.5em;
+    padding: 0.2em 1em;
     color: #333333;
 }
 .whatsapp section{
