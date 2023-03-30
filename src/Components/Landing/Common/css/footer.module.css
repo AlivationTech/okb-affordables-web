@@ -35,12 +35,24 @@
 .contact {
     width: 20%;
 }
-
+.contact li{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.contact li img{
+    width: 1.2em;
+}
 .copy {
     display: flex;
     justify-content: center;
     font-size: 0.8em;
     font-weight: 400
+}
+.socialLink{
+    display: flex;
+    gap: 1em;
+    align-items: center;
 }
 
 
