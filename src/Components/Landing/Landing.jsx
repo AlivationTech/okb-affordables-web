@@ -143,27 +143,27 @@ catch (err) {
         <section>
           <h1>Explore Project Locations</h1>
           <p className={styles.contentText}>
-            Apartments tailored to your standards with everything you need. ...
+            Apartments tailored to your standards with everything you need...
             .
           </p>
           <div className={styles.locations}>
             <LocationCard
               locationImage={Kosofe}
               locationTitle={"Kosofe, Lagos"}
-              projects={"2 Projects"}
+              projects={"9 Projects"}
               city ={"&city=kosofe"}
       
             />
             <LocationCard
               locationImage={Lekki}
               locationTitle={"Lekki, Lagos"}
-              projects={"1 Projects"}
+              projects={"2 Projects"}
               city ={"&city=lekki"}
             />
             <LocationCard
               locationImage={Abuja}
               locationTitle={"Kuje, Abuja"}
-              projects={"1 Projects"}
+              projects={"2 Projects"}
               city ={"&city=kuje"}
             />
           </div>
