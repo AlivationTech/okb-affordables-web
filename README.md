@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+OKB Affordables
+OKB Affordables is a real estate application that provides a list of properties for sale. It consists of a website and a web application that automates the process of buying a property.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Dependencies
+The following dependencies are required to run the application:
 
-## Available Scripts
+React: a JavaScript library for building user interfaces
+Node: a JavaScript runtime for running server-side applications
+NPM: a package manager for Node.js
+React Router: a routing library for React
+Styled Components: a CSS-in-JS library for React
+Website
+The website is composed of the following components:
 
-In the project directory, you can run:
+Common
+These components are used across the entire website:
 
-### `npm start`
+Navbar: a navigation component that spans the entire website and allows users to navigate through it
+Footer: a footer component that spans the entire website and provides social navigation, copyright information, and policies
+Carousel: a landing page carousel component that navigates to the Property and Property/Details pages (for featured property)
+LocationCard: a landing page location component that navigates to the Property page formatted based on location
+PrinciplesCard: a landing page principles component
+PropertyCard: a property card component that spans the Property and Landing pages and navigates to the Property/Details page. The data is fetched from an API.
+Testimonials: a landing page testimonials component with animation
+Landing
+The Landing component is a parent component that contains the overview of the product. It includes the following child components:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+PrinciplesCard: a principles card component that displays the principles of OKB Affordables
+LocationCard: a location card component that displays the locations where properties are available
+PropertyCard: a property card component that displays a list of properties. The data is fetched from the backend API.
+Carousel: a carousel component that displays featured properties and navigates to the Property/Details page.
+Additionally, the Landing component provides a form to book an inspection and routes to a Google form for that purpose.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Aboutus
+The Aboutus component provides more detailed descriptions of OKB Affordables.
 
-### `npm test`
+Agent
+The Agent component displays information about the agent and provides a form for agent applications.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Contact
+The Contact component provides social media navigation and a contact form.
 
-### `npm run build`
+PropertyList
+The PropertyList component displays a list of properties and allows filtering by location. The data is fetched from the backend API. It navigates to the Property/Details page.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+PropertyDetails
+The PropertyDetails component shows the details of a property, including a map, number of bedrooms and bathrooms, etc. The data is fetched from the backend API.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Web Application
+The web application consists of the following authentication components:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Common
+These components are used across all authentication components:
 
-### `npm run eject`
+LoginImage: the left side component for all authentication components. It spans all components.
+Navbar: a navigation component that spans all authentication components.
+ForgotPassword
+The ForgotPassword component displays a form for resetting a forgotten password.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Register
+The Register component displays a form for user registration.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Login
+The Login component displays a form for user login.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
