@@ -1,0 +1,35 @@
+.container{
+    font-family: Nunito;
+}
+.content{
+
+    padding: 1em 6em;
+    /* text-align: center; */
+}
+.content h2{
+    font-size: 2em;
+    font-weight: 500;
+}
+.termsContent h3{
+    font-size: 1.2em;
+    font-weight: 400;
+    margin-bottom:.4em ;
+
+}
+.content h4{
+    font-size: .8em;
+}
+.termsContent p{
+    font-size: .8em;
+    margin: 0 !important;
+
+
+} 
+.termsContent{
+    margin:2em 0em 2em 0em;
+}
+.termsContent h5{
+    margin-top: 1.5em;
+    text-align: center;
+    font-size: .8em;
+}

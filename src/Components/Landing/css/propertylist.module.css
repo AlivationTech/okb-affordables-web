@@ -24,6 +24,7 @@
 .header h2{
     color: #0D0A19;
     font-size: 1.5em;
+    font-weight: 700;
     margin: 0 ;
 }
 .header button{
@@ -41,6 +42,13 @@ padding: 0.5em 1.5em;
     position: relative;
 
 }
+.filterBtn{
+    display: flex;
+}
+.filterSec button{
+    padding: .4em 2em;
+}
+
 .locationList{
 
     position: absolute;

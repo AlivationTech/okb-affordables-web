@@ -46,7 +46,7 @@ const Contact = () => {
                     <h3>Contact Form</h3>
                     <p>Fill the form below and our admin will get in touch with you.</p>
                     <div className={styles.form}>
-                        <h4> Applicant Details</h4>
+                        <h4>Contact Details</h4>
                         <form>
 
                             <div className={styles.id}>

@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 //Component Imports
 import Navbar from "./Common/Navbar";
 import Footer from "./Common/Footer";
+import Arrow from "../../Assets/arrowdown.png"
 
 import { GET } from "../Services/Backend";
 
@@ -69,9 +70,16 @@ const PropertiesList = () => {
           <div className={styles.header}>
             <h2>Listed Properties</h2>
             <div className={styles.filterSec}>
-            <button onClick={toggleFilter}>Filter by location</button>
+              <button onClick={toggleFilter}>Filter by location <img src={Arrow} alt="" /></button>
+              
+            
             {filterToggle &&
               <ul className={styles.locationList}>
+                <li onClick={() => {
+                  setFilter("&city= ");
+                  setFilterToggle(false)
+             
+                }}>All</li>
                 <li onClick={() => {
                   setFilter("&city=kosofe");
                   setFilterToggle(false)

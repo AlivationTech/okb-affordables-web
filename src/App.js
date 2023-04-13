@@ -11,7 +11,8 @@ import AgentForm from "./Components/Landing/AgentForm";
 import AboutUs from "./Components/Landing/AboutUs"
 import PropertiesList from "./Components/Landing/PropertiesList";
 import Contact from "./Components/Landing/Contact";
-
+import Privacy from "./Components/Landing/PrivacyPolicy"
+import Terms from "./Components/Landing/Terms"
 //styles import
 import './App.css';
 
@@ -29,6 +30,9 @@ function App() {
         <Route path="/AboutUs" element={<AboutUs/>}/>
         <Route path="/Property" element={<PropertiesList/>}/>
         <Route path="/Contact" element={<Contact/>}/>
+        <Route path="/Privacy" element={<Privacy/>}/>
+        <Route path="/Terms" element={<Terms/>}/>
+
       </Routes>
     </Router>
 

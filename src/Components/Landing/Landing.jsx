@@ -31,11 +31,14 @@ import styles from "./css/landing.module.css";
 
 function Landing() {
   const navigate = useNavigate()
-  const [mainCarousel, setMainCarousel] = useState(false);
+  const [mainCarousel, setMainCarousel] = useState(true);
   const [yellowRoof, setYellowRoof] = useState(true);
   const [testimony1, setTestimoy1] = useState(true)
   const [testimony2, setTestimoy2] = useState(false)
   const [allProperties, setAllProperties] = useState([])
+
+  console.log(mainCarousel)
+  console.log(yellowRoof)
 
   const toggleCarousel = () => {
     setMainCarousel(!mainCarousel);
@@ -62,7 +65,7 @@ catch (err) {
     setTimeout(() => {
       toggleCarousel();
       toggleTestimony();
-    }, 10000);
+    }, 5000);
     getAllProperties()
   }, []);
 
@@ -73,8 +76,9 @@ catch (err) {
         <section style={{ marginTop: "1em" }}>
           <Carousel
             carousel={
-              mainCarousel ? styles.hideContent : styles.carouselContent
+              !mainCarousel ? styles.hideContent : styles.carouselContent
             }
+          
             carouselHeader={
               <h1>
                 Buy a <span>great home </span>
@@ -172,7 +176,7 @@ catch (err) {
  
       <section className={styles.propertySection}>
         <div className={styles.property}>
-          <h2>Listed Properties</h2>
+          <h2>Listed Properties <span onClick={()=>navigate("/Property")}>See all properties</span></h2>
           <div className={styles.propertyList}>
             {allProperties.map((property)=>
                   <PropertyCard
@@ -208,11 +212,9 @@ catch (err) {
               <h6>3 Bedroom Bungalow Ensuite</h6>
               <h1>N 15,000,000</h1>
               <p>
-                The Preferred Choice for Home Buyers and Investors. Our mission
-                is to be the foremost real estate service provider in Nigeria
-                and beyond. Our most valuable asset is our team members. Through
-                their expertise, we acquire, develop, and manage multifamily
-                communities.
+              Discover our newest hot offer: a 3-bedroom bungalow in Lagos for just 15 million Naira! This
+              property is selling fast, so act quickly to secure your dream home in one of Nigeria's most desirable
+              locations. Contact us now to schedule a viewing and take advantage of this fantastic deal.
               </p>
               <button  onClick={()=>navigate("/Property/Details", {state:{
                 id:"640ed519ac55ef4a93a574f1" }
@@ -239,21 +241,20 @@ catch (err) {
             </div>
             <div className={styles.homeContent}>
               <h3>
-                OKB AFFORDABLES
-                <br />
-                Real Estate Limited
+                OKB HOMES
               </h3>
+              <h5>Real Estate Limited</h5>
               <p>
-                We are a real estate development and investment company in
-                Nigeria dedicated to providing the most accessible real estate
-                solutions in Africa with the highest possible industry
-                standards.
+              At our real estate company, we believe that everyone should
+               have access to quality properties without breaking the bank. 
+              That's why we've made it our mission to offer affordable properties
+              that cater to a range of budgets and needs.
               </p>
               <p>
-                We are one of the fastest-growing real estate companies in
-                Nigeria with an interest in the residential and retail sectors.
-                The company presently has its core operations in Lagos with
-                extension plans to other parts of Nigeria and Africa.
+              We understand that buying a property can be a daunting process,
+              which is why we offer expert guidance and support every step of the way.
+               From selecting the right property to securing financing,
+                we're with you every step of the way.
               </p>
               <div className={styles.learnMore} style={{cursor: "pointer"}}onClick={()=>navigate("/AboutUs")}>
                 <h2 >Learn More</h2>

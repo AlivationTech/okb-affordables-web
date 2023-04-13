@@ -5,6 +5,9 @@ import React from 'react';
  import styles from './css/carousel.module.css'
 
 const Carousel = (props) => {
+    console.log(props)
+
+
 
     return (
      

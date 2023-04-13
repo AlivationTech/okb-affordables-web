@@ -14,6 +14,7 @@ import Tag from '../../../Assets/tag.png'
 import Phone from '../../../Assets/phone.png'
 
 
+
 function Footer(props) {
     return (
         <div className={styles.container}>
@@ -21,6 +22,7 @@ function Footer(props) {
                 <ul className={styles.contact}>
                     <h3>Contact</h3>
                     <li><span><img src={Phone} alt="facebook" /></span>070065246637</li>
+                    <li><span><img src={Phone} alt="facebook" /></span>0700-OKB-HOMES</li>
                     <li> <span><img src={Email} alt="facebook" /></span>info@okbffordables.ng</li>
                     <li> <span><img src={Tag} alt="facebook" /></span>30 Lanre Awolokun street, Gbagada phase 2, Lagos</li>
 
@@ -30,13 +32,12 @@ function Footer(props) {
                     <Link to ="/Property"><li>Projects</li></Link>
                     <Link to ="/AboutUs"><li>About</li></Link>
                     <Link to ="/Agent"><li>Agents</li></Link>
-                    <li>FaQs</li>
-                    <li>Privacy Policy</li>
-                    <li>Terms and Conditions</li>
+                    <Link to='/Privacy'><li>Privacy Policy</li></Link>
+                    <Link to='/Terms'><li>Terms and Conditions</li></Link>
 
                 </ul>
                 <ul className={styles.affordables}>
-                    <h3>The Affordables</h3>
+                    <h3>OKB Affordables</h3>
                     <li>OKB Affordables is a real estate company that provides affordable housing options with flexible payment plans. Our mission is to make homeownership more accessible and affordable for everyone. Contact us today to learn more about our services and find your perfect home.</li>
                     <div className={styles.socialLink}>
                     <a href="https://wa.link/t6dzp6" target="_blank" rel="noreferrer" > <img src={Twitter} alt="whatsapp" /></a>
@@ -48,7 +49,7 @@ function Footer(props) {
                 </ul>
             </div>
             <div className={styles.copy}>
-                <p>OKB 2023 @ All Right Reserved</p>
+                <p>OKB Affordables 2023 @ All Right Reserved</p>
             </div>
 
         </div>

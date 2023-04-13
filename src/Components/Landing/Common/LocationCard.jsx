@@ -5,7 +5,7 @@ import styles from "./css/location.module.css"
 const LocationCard = (props) => { 
     const navigate = useNavigate()
     return (
-        <div className={styles.container}         onClick={()=>navigate("/Property ", {
+        <div className={styles.container} onClick={()=>navigate("/Property ", {
             state: {
               city: props.city
           }

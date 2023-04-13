@@ -9,7 +9,6 @@ const Header = (props) => {
         <div className={styles.container}>
             <div className={styles.title}>
             <img src={Dash} alt="--"/>
-            
             <h6>{props.title} </h6>
             </div>
          

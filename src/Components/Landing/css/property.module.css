@@ -1,5 +1,5 @@
 .content {
-    padding: 1em 8em;
+    padding: 1em 6em;
 }
 
 .header a{
@@ -10,11 +10,13 @@
 .header h1{
     font-size: 1.5em;
     font-weight: 700;
+    margin-top: 3em;
 }
 .headerContent{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: -2em;
 
 }
 .headerContent p {
@@ -34,14 +36,14 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 gap: 1em;
-padding: 1em ;
+padding: .5em 1.2em;
 }
 .propertyContent{
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    gap: 5em;
-    margin-top: 2em;
+    gap: 1em;
+    margin-top: 0.5em;
 
 }
 .leftContent{
@@ -60,38 +62,45 @@ padding: 1em ;
     display: flex;
     padding-left: 0;
     list-style: none;
-    gap: 2em;
+    gap: 3.5em;
     background: #FFFFFF;
 border: 1.42207px solid #F0EFFB;
 border-radius: 7.58437px;
 padding: 1em;
 }
+.highlights li{
+    margin-left: 1.5em;
+}
 .highlights p {
     color: #000929;
+    opacity: 0.5;
+    font-size: .8em;
+    font-weight: 500;
 
-opacity: 0.5;
-font-size: 0.7em;
 }
 .highlights h6{
     display: flex;
     align-items: center;
-    gap: 1em;
+    gap: .5em;
     margin: 0;
+    font-size: 1em;
+    font-weight: 500;
 }
 .about h2{
     font-size: 1.2em;
+    font-weight: 500;
+    margin-top: 3em;
 
 }
 .about p{
     color: #000929;
-
-opacity: 0.7;
-font-size: 1em;
-line-height: 30px;
+    opacity: 0.7;
+    font-size: .8em;
+    line-height: 20px;
 }
 .rightContent{
-    width: 30%;
-    padding: 0 3em;
+    width: 40%;
+    padding: 0 2em;
 }
 .images{
    display: grid;
@@ -110,7 +119,7 @@ margin-top: 2em;
 padding: 1em ;
 }
 .action h6{
-    color: #000929;
+    color: #000000;
 
 opacity: 0.5;
 font-weight: 500;
@@ -120,11 +129,16 @@ margin: 0;
     letter-spacing: -0.948047px;
 
 color: #000929;
-margin: 0.4em 0;
-font-size: 1.3em;
+margin: 0.5em 0;
+font-size: 1.5em;
 }
 .action h4{
     font-size: 1.3em;
+}
+.action p{
+    font-size: .8em;
+    color: #6C727F;
+    font-weight: 400;
 }
 .action h3 span{
 

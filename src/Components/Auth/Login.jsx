@@ -44,6 +44,7 @@ function Login(props) {
                             <button>Login</button>
                         </div>
                         <p>Don’t have an account? <Link to="/signup">Sign Up</Link></p>
+                        <Link to='/'><p>Return to Homepage</p></Link>
                     </form>
 
                 </div>

@@ -1,18 +1,18 @@
 .content{
-    padding: 1em 6em;
+    padding: .5em 6em;
     text-align: center;
+    background: rgba(235, 240, 249, 0.4);
+
 }
 .socialLink{
     display: flex;
     gap: 1em;
     align-items: center;
 }
-
 .contactForm{
     
-background: rgba(235, 240, 249, 0.4);
 border-radius: 0px;
-padding: 3em 2em;
+padding: 2em 2em;
 display: flex;
 justify-content: center;
 }
@@ -40,7 +40,7 @@ justify-content: center;
     background: #FFFFFF;
 border: 0.75px solid rgba(18, 17, 39, 0.12);
 border-radius: 8px;
-padding: 3em 1em;
+padding: 0em 1em 1em 1em;
 
 }
 .formGroup{

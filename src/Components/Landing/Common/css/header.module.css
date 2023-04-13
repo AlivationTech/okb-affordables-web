@@ -2,14 +2,17 @@
     text-align: left;
     width: 100%;
     margin-bottom: 2em;
+    font-family: Nunito;
 }
 .title{
     display: flex;
     gap: 0.5em;
     align-items: center;
+    margin-top:1.5em ;
+    font-size: .8em;
 }
 .title img{
-    width: 1.5em;
+    width: 2.5em;
 }
 .title h6{
     font-size: 0.8em;
@@ -19,12 +22,13 @@
 .mainContent{
     display: flex;
     padding-left: 2em;
-    align-items: center;
+    /* align-items: center; */
 }
 .mainContent h1{
     width: 60%;
     color: #1D2130;
     font-weight: 600;
+
 }
 .description{
     width: 40%;

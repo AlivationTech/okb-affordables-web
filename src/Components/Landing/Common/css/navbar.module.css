@@ -3,7 +3,7 @@
     justify-content: space-between;
     padding: 2em auto;
     align-items: center;
-    font-family: 'Nunito Sans';
+    font-family: Nunito;
 }
 
 .logo img {
@@ -19,7 +19,7 @@
 }
 
 .navlinks li {
-    font-size: 1em;
+    font-size: .8em;
     font-weight: 600;
 }
 
@@ -28,7 +28,7 @@
     border: 0.857143px solid #00CCFF;
     border-radius: 3.42857px;
     color: #FFFFFF;
-    padding: 0.5em 1em;
+    padding: 0.5em 1.5em;
 }
 
 .toggler {

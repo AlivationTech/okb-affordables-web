@@ -14,7 +14,9 @@ function Navbar(props) {
     return (
         <div className={styles.container}>
             <div className={styles.logo}>
+                <Link to='/'>
                 <img src={Logo} alt="logo" />
+                </Link>
 
             </div>
             <div className={styles.toggler} onClick={toggleSidebar}>
@@ -48,7 +50,7 @@ function Navbar(props) {
                 </NavLink>
                 <Link to="/login" 
                  ><li>Login</li></Link>
-                <Link to="/signup"><li><button>Register</button></li></Link>
+                <Link to="/signup"><li><button>Get Started</button></li></Link>
             </ul>
 
         </div>

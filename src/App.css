@@ -12,3 +12,8 @@ a{
 button{
   cursor: pointer;
 }
+@font-face {
+  font-family: 'Nunito';
+  src: url(./Assets/Nunito-Light.ttf) format('TrueType');
+  
+}

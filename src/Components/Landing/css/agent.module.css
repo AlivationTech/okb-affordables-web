@@ -14,10 +14,14 @@
     text-align: left;
     gap: 4em;
     max-width: 100%;
-    margin: 3em auto;
+    margin: 2em auto;
     background: rgba(235, 240, 249, 0.4);
     padding: 5em 10em;
 
+}
+.aim section{
+    justify-content: space-between;
+    width: 50%;
 }
 .aim h5{
     font-weight: 600;
@@ -29,7 +33,7 @@
 
 color: #1D2130;
 font-weight: 600;
-font-size: 1.8em;
+font-size: 1.4em;
 margin: 0.5em 0;
 }
 .aim p{
@@ -68,7 +72,7 @@ margin: 0.5em 0;
         background: #FFFFFF;
     border: 0.75px solid rgba(18, 17, 39, 0.12);
     border-radius: 8px;
-    padding: 3em 1em;
+    padding: 0em 1em 1em 1em;
     
     }
     .formGroup{

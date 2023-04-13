@@ -1,3 +1,6 @@
+.container{
+    font-family: Nunito;
+}
 .content {
     padding: 1em 6em;
 }
@@ -10,9 +13,21 @@
     border-radius: 4px;
     color: #ffff;
     padding: 0.5em 3em;
+    text-align: center;
     font-weight: 600;
     font-size: 1em;
     margin-top: 2em;
+}
+.carouselContent .button , .yellowRoof .button :hover{
+    background: linear-gradient(99.53deg, rgba(0, 204, 255, 0.9) -16.3%, rgba(151, 190, 3, 0.12) 100.13%);
+    border: 1px solid #97BE03;
+    border-radius: 4px;
+    color: #ffff;
+    padding: 0.5em 3em;
+    font-weight: 600;
+    font-size: 1em;
+    margin-top: 2em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .carouselContent {
     font-family: 'Khula';
@@ -22,12 +37,12 @@
      background-size: cover;
      position: relative;
        
-    height: 600px;
+    height: 480px;
     display: flex;
     align-items: center;
     padding: 0 3em;
     color: #ffff;
-    animation: myAnim 11s ease-in-out 1;
+    animation: myAnim 10s ease;
 
  
 }
@@ -43,7 +58,7 @@
     background-size: cover;
     position: relative;
       
-   height: 600px;
+   height: 480px;
    display: flex;
    align-items: center;
    padding: 0 3em;
@@ -94,8 +109,8 @@
 .carouselButton{
     display: flex;
     justify-content: center;
-    gap: 2em;
-    margin: 2em 0;
+    gap: 1em;
+    margin: 1em 0;
     align-items: center;
 }
 .carouselButton div{
@@ -119,18 +134,28 @@ background: #E1E1E1;
     justify-content: center;
     flex-wrap: wrap;
     gap: 3em;
-    margin: 2em  0;
+    margin: 1em  0;
 }
 .property{
     max-width: 85%;
-    margin: 4em auto;
+    margin: 2em auto;
 }
 .property h2{
     text-align: left;
-    font-size: 1.5em;
-    font-weight: 500;
-    margin-top: 2em;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-top: 0em !important;
 
+}
+.property span{
+    font-size: 0.7em;
+    font-weight: 700;
+    float: right;
+    margin-top: 0em !important;
+    /* margin-right: 30%; */
+    color: #00CCFF;
+    text-decoration: underline 1px #00CCFF ;
+    cursor: pointer;
 }
 .propertyList{
     display: grid;
@@ -138,8 +163,8 @@ background: #E1E1E1;
     grid-row-gap: 2.5em;
     grid-column-gap: 2em;
    
- 
 }
+
 
 .content section {
     margin: 3em auto;
@@ -173,12 +198,15 @@ background: #E1E1E1;
 .offerContent h3 {
     text-align: left;
     font-size: 1.5em;
-    font-weight: 500;
-    margin: 0;
+    font-weight: 700;
 }
 .offerContent h1{
    text-align: left !important;
-   margin: 0.7em 0 !important;
+   margin: 0.5em 0 !important;
+   font-size: 1.5em !important;
+   font-weight: 700 !important;
+
+
 }
 .offer p{
 
@@ -189,16 +217,18 @@ margin: 0 !important;
 }
 .offerContent {
     width: 40%;
+
 }
 .offer button{
 
 background: #00CCFF;
 border-radius: 5.47917px;
-padding: 0.9em 2.3em;
+padding: 0.9em 3.5em;
 color: #FFFFFF;
 border: none;
 font-weight: 700;
-margin-top: 2em;
+margin-top: 1em;
+font-size: .8em;
 }
 .offer h6 {
     font-size: 0.8em;
@@ -228,6 +258,8 @@ margin-top: 2em;
 
 .inspection h3 {
     margin: 0;
+    font-weight:700;
+
 }
 
 .inspection button {
@@ -237,7 +269,7 @@ margin-top: 2em;
     font-style: normal;
     font-weight: 700;
     font-size: 0.8em;
-    padding: 0.7em 0.5em;
+    padding: 0.9em 1.2em;
     border: none;
 }
 .propertySection{
@@ -252,21 +284,38 @@ padding: 2em 4em;
     padding:  3em;
     background: #121212;
     color: #F0F0F0;
+
 }
 .homeContent{
     color: #F0F0F0;
     padding-left: 2em;
-    margin: auto;
+    margin: 0;
 }
 .homeContent h3{
     font-weight: 400 !important;
-    letter-spacing: 1px;
-    line-height: 25px;
-    font-size: 1.5em;
+    line-height: 5px;
+    font-size: 1.2em;
+    margin-top: 0em;
+    font-family: Nunito;
+
+}
+.homeContent h5{
+    font-size: 1.2em;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-family: Nunito;
+
+
+}
+.homeImage img{
+    max-width: 45em;
 }
 .homeContent p{
-    letter-spacing: 1px;
-    line-height: 25px;
+    line-height: 23px;
+    font-family: Nunito;
+    word-spacing: 1px;
+    font-size: .8em;
+
 }
 .learnMore {
     width: 100%;
@@ -282,7 +331,7 @@ padding: 2em 4em;
 .learnMore .border{
     width: 10em;
     height: 3px;
-    margin-left: 20px;
+    margin-left: 10px;
     background: #00CCFF;
 }
 .testimonals{
@@ -291,11 +340,12 @@ padding: 2em 4em;
 .testimonals h3{
    text-align: center;
    color: #00CCFF;
-   font-size: 1em;
+   font-size: .7em;
    margin: 0;
 }
 .testimonals h1{
-    margin: 0.5em 0 !important;
+    margin: 0.3em 0 !important;
+
 }
 .showContent{
     display: block;
@@ -307,7 +357,8 @@ padding: 2em 4em;
     display: flex;
     align-items: center;
     max-width: 80%;
-    margin: 6em auto;
+    margin: 4em auto;
+    justify-content: space-between;
 }
 .agentImage{
     position: relative;
@@ -366,19 +417,17 @@ top: 90%;
     padding: 0 2em;
 }
 .agentContent h2{
-
-color: #000929;
-font-weight: 700;
-font-size: 2em;
-margin: 1em 0;
+    color: #000929;
+    font-weight: 700;
+    font-size: 1.5em;
+    margin: 1em 0;
 }
 .agentContent p{
-
-color: #6C727F;
-font-weight: 400;
-font-size: 1em;
-margin: 0;
-line-height: 25px;
+    color: #6C727F;
+    font-weight: 400;
+    font-size: 1em;
+    margin: 0;
+    line-height: 25px;
 }
 .agentContent .button{
 
@@ -410,26 +459,27 @@ font-weight: 700;
     max-width: 80%;
     margin: auto;
     text-align: center;
-    margin: 8em auto ;
+    margin: 9em auto ;
 }
 .partners h2{
     font-size: 2em;
+    font-weight: 500;
+    line-height: 37px;
+
 }
 .partners p{
     font-weight: 400;
-font-size: 1em;
-line-height: 30px;
-
-
-text-align: center;
-
-color: #5A5E51;
+    font-size: 1em;
+    line-height: 25px;
+    text-align: center;
+    color: #121212;
+    margin: 2em auto;
 
 }
 .partnersList{
     display: flex;
     justify-content: center;
-    gap: 2em;
+    gap: 1em;
     align-items: center;
     margin: 2em auto;
 }
@@ -443,15 +493,15 @@ color: #5A5E51;
     margin: 6em auto;
 }
 .principle h2 {
-
-color: #121212;
-font-size: 2em;
+    color: #121212;
+    font-size: 2em;
+    font-weight: 500;
 }
 .principle p{
     color: #121212;
     font-weight: 400;
     font-size: 1em;
-    line-height: 30px;
+    line-height: 25px;
 }
 .principlesList{
     display: grid;
@@ -462,21 +512,22 @@ font-size: 2em;
 }
 .light{
 
-background: #F7F7FD;
+background: #ebf0f9ab;
 border-radius: 2px;
 padding: 1em;
 text-align: left;
 }
 .dark{
 
-background: #121212;
+/* background: #121212; */
 border-radius: 2px;
 padding: 1em;
 text-align: left;
 }
 .principlesList h3{
     color: #00CCFF;
-    font-size: 1em;
+    font-size: 0.9em;
+    font-weight: 500;
 }
 .dark p {
    color: #9EA3AE;

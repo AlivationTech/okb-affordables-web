@@ -49,7 +49,7 @@ const PropertyDetails = () => {
                 <div className={styles.content}>
                     <Navbar />
                     <div className={styles.header}>
-                        <Link to="/"><span><img src={Back} alt="<" /> Back</span></Link>
+                        <Link to="/Property"><span><img src={Back} alt="<" /> Back</span></Link>
                         <h1>{propertyDetail.title}</h1>
                         <div className={styles.headerContent}>
                             <p>{propertyDetail.address}</p>
@@ -71,8 +71,7 @@ const PropertyDetails = () => {
 
                                 {propertyDetail.imageUrl &&
                                     <img src={propertyDetail.imageUrl.featuredImage
-                                    } alt="Property" />
-
+                                    } alt="Property"/>
                                 }
 
 
@@ -102,6 +101,39 @@ const PropertyDetails = () => {
                                 <p>{propertyDetail.description}</p>
 
                             </section>
+                         
+                            <div className={styles.map
+                            }>
+                                <iframe title='address' style={{ borderRadius: "12px" }} width="100%" height="300" id="gmap_canvas" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.446574136213!2d3.3987428152557912!3d6.591283924199067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b92c035813125%3A0x4202d803e3667b52!2sJEXTOBAN%20Secondary%20School!5e0!3m2!1sen!2sng!4v1679832432951!5m2!1sen!2sng" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            </div>
+
+                        </div>
+                        <div className={styles.rightContent}>
+                            {/* <div className={styles.images}>
+                                {propertyDetail.imageUrl &&
+                                    <img src={propertyDetail.imageUrl.imageTwo} alt="Property" />
+                                }
+                                {propertyDetail.imageUrl &&
+                                    <img src={propertyDetail.imageUrl.imageThree} alt="Property" />
+                                }
+                            </div> */}
+                            <section className={styles.action}>
+                                <h6>Price</h6>
+                                <h3>N24,400,000 <span>/unit</span></h3>
+                                <Link to='/Login'>
+                                <button><img src={Apply} alt="" /> <span>Apply now</span></button>
+                                </Link>
+                                <div className={styles.divide} />
+
+                                <h4>Schedule inspection</h4>
+                                <div className={styles.buttons}>
+                                    <button><img src={Home} alt="" /> <span>In person</span></button>
+                                    <button><img src={Video} alt="" /> <span>Virtual</span></button>
+                                </div>
+                                <button className={styles.request}><img src={Send} alt="" /> <span>Send Request</span></button>
+                                <p>It’s free, with no obligation － cancel anytime.</p>
+
+                            </section>
                             <div className={styles.avaliablity}>
                                 <h3>Available Units</h3>
                                 <p>This shows total number available</p>
@@ -118,36 +150,6 @@ const PropertyDetails = () => {
 
 
                             </div>
-                            <div className={styles.map
-                            }>
-                                <iframe title='address' style={{ borderRadius: "12px" }} width="100%" height="300" id="gmap_canvas" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.446574136213!2d3.3987428152557912!3d6.591283924199067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b92c035813125%3A0x4202d803e3667b52!2sJEXTOBAN%20Secondary%20School!5e0!3m2!1sen!2sng!4v1679832432951!5m2!1sen!2sng" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                            </div>
-
-                        </div>
-                        <div className={styles.rightContent}>
-                            <div className={styles.images}>
-                                {propertyDetail.imageUrl &&
-                                    <img src={propertyDetail.imageUrl.imageTwo} alt="Property" />
-                                }
-                                {propertyDetail.imageUrl &&
-                                    <img src={propertyDetail.imageUrl.imageThree} alt="Property" />
-                                }
-                            </div>
-                            <section className={styles.action}>
-                                <h6>Price</h6>
-                                <h3>N24,400,000 <span>/unit</span></h3>
-                                <button><img src={Apply} alt="" /> <span>Apply now</span></button>
-                                <div className={styles.divide} />
-
-                                <h4>Schedule inspection</h4>
-                                <div className={styles.buttons}>
-                                    <button><img src={Home} alt="" /> <span>In person</span></button>
-                                    <button><img src={Video} alt="" /> <span>Virtual</span></button>
-                                </div>
-                                <button className={styles.request}><img src={Send} alt="" /> <span>Send Request</span></button>
-                                <h6>It’s free, with no obligation － cancel anytime.</h6>
-
-                            </section>
                         </div>
 
                     </div>

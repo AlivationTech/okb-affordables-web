@@ -3,29 +3,30 @@
 border: 0.947917px solid #E4E6E8;
 border-radius: 13.2708px;
 
-padding: 2em;
+padding: 1em;
 }
+
 .container img{
     width: 100%;
-    height: 300px;
+    height: 200px;
+    border-radius: .8em;
+}
+.container img :hover{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .container h3{
-    font-size: 1em;
+    font-size: 1.1em;
     font-weight: 700;
-    margin: 0.5em 0;
+    margin-top: 0.5em ;
 }
 .details ul{
     display: flex;
     padding-left: 1em;
     gap: 2em;
-    letter-spacing: -0.0947917px;
-    font-size: 0.9em;
-    margin: 0;
-
-
-color: #9A9EA7;
-
-flex-wrap: wrap;
+    font-size: 0.7em;
+    color: #9A9EA7;
+    margin-top: .5em;
+    flex-wrap: wrap;
 }
 .listStyle{
 
@@ -40,8 +41,8 @@ align-items: center;
 .listStyle span{
 
     background: #316FB6;
-    height: 1em;
-width: 1em;
+    height: .8em;
+width: .8em;
 border-radius: 50%;
 }
 .address{
@@ -73,11 +74,12 @@ color: #9A9EA7;
 .priceDetails button{
 
 background: #00CCFF;
-border-radius: 5.47917px;
+border-radius: 5px;
 padding: 0.5em 1em;
 color: #FFFFFF;
 border: none;
-font-weight: 700;
+font-weight: 600;
+font-size: .8em;
 }
 .priceDetails h4{
     margin: 0em;
