@@ -45,7 +45,6 @@ const Agent = () => {
             body : JSON.stringify(formData)
 
         })
-        console.log(formData)
     } catch (error) {
         console.log(error)
         
