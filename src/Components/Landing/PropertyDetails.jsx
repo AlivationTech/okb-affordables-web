@@ -134,7 +134,7 @@ const PropertyDetails = () => {
                             <section className={styles.action}>
                                 <h6>Price</h6>
                                 <h3>N24,400,000 <span>/unit</span></h3>
-                                <Link to='/Login'  target="_blank" rel="noreferrer">
+                                <Link to='/login'  target="_blank" rel="noreferrer">
                                 <button><img src={Apply} alt="" /> <span>Apply now</span></button>
                                 </Link>
                                 <div className={styles.divide} />
