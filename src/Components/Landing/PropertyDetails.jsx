@@ -5,6 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import Navbar from './Common/Navbar';
 import Footer from './Common/Footer';
 import styles from "./css/property.module.css"
+// import Carousel from "../Landing/Common/PropertyCarousel"
 
 //Resoure Imports 
 import Apply from "../../Assets/apply.png"
@@ -23,6 +24,11 @@ import { GET } from '../Services/Backend';
 
 const PropertyDetails = () => {
     const [propertyDetail, setPropertyDetails] = useState({})
+    const [currentIndex, setCurrentIndex] = useState(0)
+    const [images, setImages]= useState([
+
+    ])
+
     const location = useLocation()
     const getPropertyDetail = async () => {
 
@@ -30,15 +36,27 @@ const PropertyDetails = () => {
             console.log(location.state.id)
             const response = await GET(`/project/user/project/${location.state.id}`)
             console.log(response)
+            const imageList =[]
+            imageList.push(
+                response.data.data.imageUrl.featuredImage,
+                response.data.data.imageUrl.imageThree,
+                response.data.data.imageUrl.imageTwo
+                )
+            console.log(imageList)
+            setImages(imageList)
             setPropertyDetails(response.data.data)
-
-
-
         }
         catch (err) {
             return err.response
         }
+    
+        
     }
+
+    const goToImage = id =>{
+        setCurrentIndex(id)
+    }
+ 
     useEffect(() => {
         getPropertyDetail()
     }, [])
@@ -68,13 +86,16 @@ const PropertyDetails = () => {
                     <div className={styles.propertyContent}>
                         <div className={styles.leftContent}>
                             <div className={styles.mainImage}>
-
                                 {propertyDetail.imageUrl &&
-                                    <img src={propertyDetail.imageUrl.featuredImage
+                                    <img src={images[currentIndex]
                                     } alt="Property"/>
+
                                 }
-
-
+                            </div>
+                            <div className={styles.subImages}>
+                                {images.map((image,id) =>(
+                                    <img key={id} src={image} onClick={() =>goToImage(id)}/>
+                                ))}
                             </div>
                             <ul className={styles.highlights}>
                                 <li>
@@ -109,18 +130,11 @@ const PropertyDetails = () => {
 
                         </div>
                         <div className={styles.rightContent}>
-                            {/* <div className={styles.images}>
-                                {propertyDetail.imageUrl &&
-                                    <img src={propertyDetail.imageUrl.imageTwo} alt="Property" />
-                                }
-                                {propertyDetail.imageUrl &&
-                                    <img src={propertyDetail.imageUrl.imageThree} alt="Property" />
-                                }
-                            </div> */}
+                         
                             <section className={styles.action}>
                                 <h6>Price</h6>
                                 <h3>N24,400,000 <span>/unit</span></h3>
-                                <Link to='/Login'>
+                                <Link to='/Login'  target="_blank" rel="noreferrer">
                                 <button><img src={Apply} alt="" /> <span>Apply now</span></button>
                                 </Link>
                                 <div className={styles.divide} />
@@ -130,7 +144,8 @@ const PropertyDetails = () => {
                                     <button><img src={Home} alt="" /> <span>In person</span></button>
                                     <button><img src={Video} alt="" /> <span>Virtual</span></button>
                                 </div>
-                                <button className={styles.request}><img src={Send} alt="" /> <span>Send Request</span></button>
+                                <button 
+                                 className={styles.request}><a href="https://forms.gle/ToV3VNk2vF6HMQCs9" target="_blank" rel="noreferrer" ><img src={Send} alt="" /> <span>Send Request</span></a></button>
                                 <p>It’s free, with no obligation － cancel anytime.</p>
 
                             </section>

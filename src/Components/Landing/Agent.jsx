@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import axios from "axios";
+
 
 
 //component imports
@@ -22,6 +24,7 @@ const Agent = () => {
         city: ''
 
     })
+
     
     const handleChange =(e)=>{
         setFormData({
@@ -32,19 +35,28 @@ const Agent = () => {
 
       const handleSubmit = (e) => {
        e.preventDefault()
-     console.log(formData);
+        console.log(formData);
         setFormData({
             ...formData, [e.target.name] : ''
         })
         
-    try {
-        let res =  fetch("http://localhost:3000/api/v1/agent/user/save",{
-            method : "POST",
-            mode:'cors',
-            headers : {'content-type' : 'application/json'},
-            body : JSON.stringify(formData)
+        try {
 
-        })
+            const headers = {
+              'Content-Type': 'application/json',
+              "Access-Control-Allow-Origin": "*"
+              
+            }
+          
+            axios
+              .post('https://okb-affordables.herokuapp.com/api/v1/agent/user/save', formData, {
+                headers: headers,
+                withCredentials: true
+              })
+              .then(response => {
+                console.log(response)
+              })
+    
     } catch (error) {
         console.log(error)
         
@@ -131,7 +143,7 @@ const Agent = () => {
                             </div>
 
                             <div className={styles.button}>
-                                    <button>Send message</button>
+                                    <button>Register</button>
                                 </div>
                             
                         </form>

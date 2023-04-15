@@ -54,8 +54,8 @@ padding: .5em 1.2em;
 }
 .mainImage img{
     width: 100%;
-    height: 400px;
-    border-radius: 2px;
+    height: 350px;
+    border-radius: 10px;
 
 }
 .highlights{
@@ -109,6 +109,24 @@ padding: 1em;
 .images img{
  width: 100%;
  border-radius: 2px ;
+}
+.subImages{
+    margin-top: 1em;
+}
+.subImages img{
+    height: 3em;
+    margin: .3em;
+    border-radius: 2px;
+    padding: .2em;
+}
+.subImages :hover{
+    /* height: 3em;
+    margin: .3em;
+    border-radius: 2px;
+    padding: .2em; */
+    cursor: pointer;
+    border: 1px solid #00CCFF;
+
 }
 .action{
 
@@ -241,7 +259,7 @@ opacity: 0.7;
     }
     .mainImage img{
         width: 100%;
-        height: 300px;
+        height: 200px;
         border-radius: 2px;
     
     }

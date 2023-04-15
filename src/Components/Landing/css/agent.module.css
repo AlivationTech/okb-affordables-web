@@ -80,7 +80,7 @@ margin: 0.5em 0;
     }
     .formGroup input{
         background: #FFFFFF;
-    border: 0.948884px solid rgba(18, 17, 39, 0.12);
+    border: 0.948884px solid #FFFFFF;
     border-radius: 8px;
     height: 2em;
     width: 20em;
@@ -110,10 +110,10 @@ margin: 0.5em 0;
     
     background: #09B4DE;
     border-radius: 7.591px;
-    height: 3em;
-    width: 20em;
+    height: 2em;
+    width: 10em;
     border: none;
-    margin-top: 2em;
+    margin-top: 1em;
     color: #FFFFFF;
     }
 /* tab styling */
