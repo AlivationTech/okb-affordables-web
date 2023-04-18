@@ -30,40 +30,73 @@ const Agent = () => {
         setFormData({
             ...formData, [e.target.name]: e.target.value
         })
-        console.log(formData)
     }
 
-      const handleSubmit = (e) => {
+      const handleSubmit = async (e) => {
        e.preventDefault()
-        console.log(formData);
-        setFormData({
-            ...formData, [e.target.name] : ''
-        })
-        
-        try {
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        };
+        console.log(formData)
+        const response = await fetch('https://okb-affordables.herokuapp.com/api/v1/agent/user/save', requestOptions);
+        const data = await response.json();
+       console.log(data)
 
-            const headers = {
-              'Content-Type': 'application/json',
-              "Access-Control-Allow-Origin": "*"
-              
-            }
+        setFormData( {
+            title : '',
+            fullname : '',
+            phonenumber:'',
+            emailaddress:'',
+            state :'',
+            city: ''
+        }
+         
+        ) 
           
-            axios
-              .post('https://okb-affordables.herokuapp.com/api/v1/agent/user/save', formData, {
-                headers: headers,
-                withCredentials: true
-              })
-              .then(response => {
-                console.log(response)
-              })
-    
-    } catch (error) {
-        console.log(error)
+
+
+
         
-    }
+    //     try {
+    //         post('https://okb-affordables.herokuapp.com/api/v1/agent/user/save', {
+    //             method: 'POST',
+    //             body: JSON.stringify({...formData})
+           
+    //         })
+    // }
+    //     catch (err) {
+    //         return err
+    //     }
+    
+        
+    //     try {
+
+    //         const headers = {
+    //           'Content-Type': 'application/json',
+    //           "Access-Control-Allow-Origin": "*"
+              
+    //         }
+          
+    //         axios
+    //           .post('https://okb-affordables.herokuapp.com/api/v1/agent/user/save', formData, {
+    //             headers: headers,
+    //             withCredentials: true
+    //           })
+    //           .then(response => {
+    //             console.log(response)
+    //           })
+    
+    // } catch (error) {
+    //     console.log(error)
+        
+    // }
 
       };
-   
+
+
+     
 
 
 

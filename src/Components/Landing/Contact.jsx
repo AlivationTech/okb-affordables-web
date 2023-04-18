@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from "axios";
 
 //Component Imports
 import Navbar from './Common/Navbar'
@@ -16,6 +17,42 @@ import Linkedin from '../../Assets/linkedin.png'
 import styles from "./css/contact.module.css"
 
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name : '',
+        email:'',
+        number :'',
+        meassge:''
+
+    })
+
+    const handleChange =(e)=>{
+        setFormData({
+            ...formData, [e.target.name]: e.target.value
+        })
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        //  const requestOptions = {
+        //      method: 'POST',
+        //      headers: { 'Content-Type': 'application/json' },
+        //      body: JSON.stringify(formData)
+        //  };
+        //  console.log(formData)
+        //  const response = await fetch('https://okb-affordables.herokuapp.com/api/v1/agent/user/save', requestOptions);
+        //  const data = await response.json();
+        // console.log(data)
+ 
+         setFormData( {
+            name : '',
+            email:'',
+            number :'',
+            meassge:''
+         }
+          
+         ) 
+        }
+   
     return (
         <div className={styles.container}>
             <div className={styles.content}>
@@ -47,26 +84,26 @@ const Contact = () => {
                     <p>Fill the form below and our admin will get in touch with you.</p>
                     <div className={styles.form}>
                         <h4>Contact Details</h4>
-                        <form>
+                        <form onSubmit={handleSubmit}>
 
                             <div className={styles.id}>
                                 <div className={styles.formGroup}>
                                     <label htmlFor='name'>Name</label>
-                                    <input type="text" name='name' placeholder='Full name' />
+                                    <input onChange={handleChange}  type="text" name='name' placeholder='Full name' />
                                 </div>
                                 <div className={styles.formGroup}>
                                     <label htmlFor='email'>Email</label>
-                                    <input type="email" name='email' placeholder='hi@example.com' />
+                                    <input onChange={handleChange}  type="email" name='email' placeholder='hi@example.com' />
                                 </div>
                                 <div className={styles.formGroup}>
                                     <label htmlFor='number'>Phone Number</label>
-                                    <input type="text" name='number' placeholder='+234 813 6567  891' />
+                                    <input onChange={handleChange}  type="text" name='number' placeholder='+234 813 6567  891' />
                                 </div>
                             </div>
                             <div className={styles.message}>
                                 <div className={styles.formGroup}>
                                     <label htmlFor='message'>Message</label>
-                                    <textarea type="text" name='meassge' placeholder='Type Here' />
+                                    <textarea onChange={handleChange}  type="text" name='meassge' placeholder='Type Here' />
                                 </div>
                                 <div className={styles.button}>
                                     <button>Send message</button>
