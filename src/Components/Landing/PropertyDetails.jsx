@@ -24,10 +24,17 @@ import { GET } from '../Services/Backend';
 
 const PropertyDetails = () => {
     const [propertyDetail, setPropertyDetails] = useState({})
+    const [propertyTypeDetail, setpropertyTypeDetail] = useState({})
     const [currentIndex, setCurrentIndex] = useState(0)
-    const [images, setImages]= useState([
+    const [isType, setisType] = useState(false)
+    const [pricePerUnit, setpricePerUnit] = useState()
+    const [images, setImages]= useState([])
+    const [unit, setunit]= useState()
+    const [availableUnit, setAvailableUnit]= useState()
+    const [unitPer, setunitPer]= useState()
+    const [activeIndex, setActiveIndex] = useState(0);
 
-    ])
+    
 
     const location = useLocation()
     const getPropertyDetail = async () => {
@@ -35,23 +42,90 @@ const PropertyDetails = () => {
         try {
             console.log(location.state.id)
             const response = await GET(`/project/user/project/${location.state.id}`)
+
             console.log(response)
+            console.log(propertyTypeDetail)
+
             const imageList =[]
             imageList.push(
                 response.data.data.imageUrl.featuredImage,
                 response.data.data.imageUrl.imageThree,
                 response.data.data.imageUrl.imageTwo
                 )
+             
             console.log(imageList)
+            const per = ((availableUnit/unit) * 100)
+            const Type = ((response.data.data.propertyTypes).length >1)
+
+
+           
+
+             setPropertyDetails(response.data.data)
+
             setImages(imageList)
-            setPropertyDetails(response.data.data)
+            setpropertyTypeDetail(response.data.data.propertyTypes)
+            setpricePerUnit(new Intl.NumberFormat().format(response.data.data.propertyTypes[0].unitPrice))
+            setunit(response.data.data.propertyTypes[0].totalUnit)
+            setAvailableUnit(response.data.data.propertyTypes[0].availableUnit)
+            setunitPer(per)
+
+            setisType(Type)
+         
+
+        // getPropertyType()
+
+
         }
         catch (err) {
             return err.response
         }
-    
-        
+
     }
+
+
+ 
+  
+ 
+    
+    
+    const getPropertyTypeDetail = (e) => {
+        let content = e.target.textContent
+
+            if (content === 'Normal Piece Price'){
+                let per = (availableUnit/unit) * 100
+                setpricePerUnit(new Intl.NumberFormat().format(propertyTypeDetail[0].unitPrice))
+                setunit(propertyTypeDetail[0].totalUnit)
+                setAvailableUnit(propertyTypeDetail[0].availableUnit)
+                setunitPer(per)
+
+           }
+            else if (content === 'Corner Piece Price'){
+                let per = (availableUnit/unit) * 100
+                setpricePerUnit(new Intl.NumberFormat().format(propertyTypeDetail[1].unitPrice))
+                setunit(propertyTypeDetail[1].totalUnit)
+                setAvailableUnit(propertyTypeDetail[1].availableUnit)
+                setunitPer(per)
+
+
+           }    
+    }
+
+    const handlePropertyTypeClick = (index) => {
+        setActiveIndex(index);
+      };    
+
+    const getPropertyType  = (      
+        <div  onClick={getPropertyTypeDetail}>
+          <div className={styles.actionLabel}>
+            <h6 className={activeIndex === 0 ? styles.active : ''} onClick={() => handlePropertyTypeClick(0)}>Normal Piece Price</h6>
+            <div></div>
+            <h6 className={activeIndex === 1 ? styles.active : ''} onClick={() => handlePropertyTypeClick(1)}>Corner Piece Price</h6> 
+          </div>
+          <hr />
+        </div>
+      );
+    
+
 
     const goToImage = id =>{
         setCurrentIndex(id)
@@ -59,6 +133,10 @@ const PropertyDetails = () => {
  
     useEffect(() => {
         getPropertyDetail()
+
+
+
+
     }, [])
 
     if (propertyDetail !== {}) {
@@ -109,11 +187,11 @@ const PropertyDetails = () => {
                                     <h6><img src={Bath} alt="bath" /> <span>{propertyDetail.highlight && propertyDetail.highlight.numberOfBath}</span></h6>
                                 </li>
                                 <li>
-                                    <p>Slots</p>
-                                    <h6><img src={Slot} alt="icon" /> <span>40 slots available</span></h6>
+                                    <p>Area</p>
+                                    <h6><img src={Slot} alt="icon" /> <span>{propertyDetail.highlight && propertyDetail.highlight.areaOfSite}sqm</span></h6>
                                 </li>
                                 <li>
-                                    <p>Status</p>
+                                    <p>Type</p>
                                     <h6><img src={Tick} alt="icon" /> <span>{propertyDetail.highlight && propertyDetail.highlight.houseType}</span></h6>
                                 </li>
                             </ul>
@@ -130,10 +208,15 @@ const PropertyDetails = () => {
 
                         </div>
                         <div className={styles.rightContent}>
-                         
+
                             <section className={styles.action}>
-                                <h6>Price</h6>
-                                <h3>N24,400,000 <span>/unit</span></h3>
+                                {console.log(isType)}
+                                {getPropertyDetail}
+                                {isType ? getPropertyType: ( 
+                                <div>               
+                                    <h6>Price</h6>   
+                                </div>)}
+                                <h3>{pricePerUnit} <span>/unit</span></h3>
                                 <Link to='/login'  target="_blank" rel="noreferrer">
                                 <button><img src={Apply} alt="" /> <span>Apply now</span></button>
                                 </Link>
@@ -153,13 +236,13 @@ const PropertyDetails = () => {
                                 <h3>Available Units</h3>
                                 <p>This shows total number available</p>
                                 <div className="w3-border">
-                                    <div className="w3-blue" style={{ height: "24px", width: "78%" }}></div>
+                                    <div className="w3-blue" style={{ height: "24px", width: (unitPer)}}></div>
                                 </div>
 
 
                                 <div className={styles.slot}>
-                                    <h4>17 available of 44 units</h4>
-                                    <p>78%</p>
+                                <h4>{availableUnit} available of {unit} units</h4>
+                                    <p>{unitPer}%</p>
                                 </div>
 
 

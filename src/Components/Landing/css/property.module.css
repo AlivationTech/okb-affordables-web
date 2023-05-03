@@ -136,6 +136,30 @@ border-radius: 7.58437px;
 margin-top: 2em;
 padding: 1em ;
 }
+.actionLabel{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.actionLabel h6{
+    color: #000000;
+    font-size: .8em;
+    opacity: 0.5;
+    font-weight: 400;
+    margin: 0;
+}
+.actionLabel div{
+    border-left: .5px solid #000000;
+   width: 4px;
+
+}
+
+.active {
+    color: #000000 !important;
+    font-weight: 600 !important;  
+    opacity: 1 !important;
+ 
+  }
 .action h6{
     color: #000000;
 

@@ -17,9 +17,9 @@ const Agent = () => {
 
     const [formData, setFormData] = useState({
         title : '',
-        fullname : '',
-        phonenumber:'',
-        emailaddress:'',
+        fullName : '',
+        phoneNumber:'',
+        emailAddress:'',
         state :'',
         city: ''
 
@@ -27,9 +27,9 @@ const Agent = () => {
 
     
     const handleChange =(e)=>{
-        setFormData({
-            ...formData, [e.target.name]: e.target.value
-        })
+        setFormData((prev) => ({
+            ...prev , [e.target.name]: e.target.value
+        }))
     }
 
       const handleSubmit = async (e) => {
@@ -39,60 +39,23 @@ const Agent = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         };
-        console.log(formData)
-        const response = await fetch('https://okb-affordables.herokuapp.com/api/v1/agent/user/save', requestOptions);
+        console.log(requestOptions.body)
+        const response = await fetch("https://okb-affordables.herokuapp.com/api/v1/agent/user/save", requestOptions);
         const data = await response.json();
        console.log(data)
+       console.log(response)
 
         setFormData( {
             title : '',
-            fullname : '',
-            phonenumber:'',
-            emailaddress:'',
+            fullName : '',
+            phoneNumber:'',
+            emailAddress:'',
             state :'',
             city: ''
         }
          
         ) 
-          
-
-
-
         
-    //     try {
-    //         post('https://okb-affordables.herokuapp.com/api/v1/agent/user/save', {
-    //             method: 'POST',
-    //             body: JSON.stringify({...formData})
-           
-    //         })
-    // }
-    //     catch (err) {
-    //         return err
-    //     }
-    
-        
-    //     try {
-
-    //         const headers = {
-    //           'Content-Type': 'application/json',
-    //           "Access-Control-Allow-Origin": "*"
-              
-    //         }
-          
-    //         axios
-    //           .post('https://okb-affordables.herokuapp.com/api/v1/agent/user/save', formData, {
-    //             headers: headers,
-    //             withCredentials: true
-    //           })
-    //           .then(response => {
-    //             console.log(response)
-    //           })
-    
-    // } catch (error) {
-    //     console.log(error)
-        
-    // }
-
       };
 
 
@@ -150,18 +113,18 @@ const Agent = () => {
                                 </div>
                                 <div className={styles.formGroup}>
                                     <label htmlFor='name'>Name</label>
-                                    <input onChange={handleChange} value={formData.fullname} type="text" name='fullname' placeholder='Full name' />
+                                    <input onChange={handleChange} value={formData.fullName} type="text" name='fullName' placeholder='Full name' />
                                 </div>
                             </div>
                             <div className={styles.formFlex}>
                            
                                 <div className={styles.formGroup}>
                                     <label htmlFor='email'>Email</label>
-                                    <input onChange={handleChange} value={formData.emailaddress} type="email" name='emailaddress' placeholder='hi@example.com' />
+                                    <input onChange={handleChange} value={formData.emailAddress} type="email" name='emailAddress' placeholder='hi@example.com' />
                                 </div>
                                 <div className={styles.formGroup}>
                                     <label htmlFor='number'>Phone Number</label>
-                                    <input onChange={handleChange} value={formData.phonenumber} type="text" name='phonenumber' placeholder='+234 813 6567  891' />
+                                    <input onChange={handleChange} value={formData.phoneNumber} type="text" name='phoneNumber' placeholder='+234 813 6567  891' />
                                 </div>
                             </div>
                             <div className={styles.formFlex}>
