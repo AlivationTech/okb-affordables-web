@@ -13,6 +13,7 @@ import PropertiesList from "./Components/Landing/PropertiesList";
 import Contact from "./Components/Landing/Contact";
 import Privacy from "./Components/Landing/PrivacyPolicy"
 import Terms from "./Components/Landing/Terms"
+import Dashboard from "./Components/Dashboard/Dashboard"
 //styles import
 import './App.css';
 
@@ -32,6 +33,7 @@ function App() {
         <Route path="/Contact" element={<Contact/>}/>
         <Route path="/Privacy" element={<Privacy/>}/>
         <Route path="/Terms" element={<Terms/>}/>
+        <Route path="/Dashboard" element={<Dashboard/>}/>
 
       </Routes>
     </Router>
