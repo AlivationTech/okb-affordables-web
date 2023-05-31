@@ -1,0 +1,36 @@
+.modalContent{
+ 
+  color: #454545;
+  background: #fff;
+  margin: 5em auto;
+  width: 40em;
+  padding: 2em;
+  padding-right: 0em;
+  border-radius: 5px;
+  border: 1px solid #454545;
+
+
+}
+.modal{
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4);
+  display: block;
+  
+      
+  }
+  .hideModal{
+      display: none;
+  }
+  .close{
+      /* text-align: right; */
+      /* padding: 1.5em; */
+      color: #000;
+    }
+
+ 

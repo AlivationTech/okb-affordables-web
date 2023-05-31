@@ -1,0 +1,167 @@
+
+    .dashboardboxescontainer {
+        display: flex;
+        justify-content: space-between;
+        margin: 2rem 0;
+        width: 80%;
+        margin-left: 20em;
+      }
+      .container{
+        background-color: #f2f2f2;
+
+      }
+      .weclomeHeader{
+        margin-left: 13em;
+        font-size: 1.6em;
+
+      }
+      .chart{
+        margin-left: 21em;
+        margin-right: 2em;
+
+        border-radius: 10px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        padding: 20px;
+        width: 50%;
+        height:100%;
+        background-color: #fff;
+
+      }
+      .dashboardheading{
+        font-size: 1.5em;
+        font-weight: bold;
+        /* margin: 0em 0em 1em 0em; */
+        margin: 1em 0em 0em 13em;
+
+      }
+      .summary{
+        display: flex;
+        justify-content: space-between;
+      }
+      
+      
+      .dashboardbox {
+        display: flex;
+        flex-direction: row;
+        background-color: #fff;
+        border-radius: 5px;
+        /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
+        padding: .9em;
+        width: calc(25% - 0.5rem);
+        margin: 1em;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+                }
+      .icon{
+        margin: .7em 1.5em 0em .3em;
+        font-size: 2.5em;
+      }
+      
+      .dashboardbox h2 {
+        font-size: 1.5rem;
+        margin-bottom: .2rem;
+        text-align: right;
+        
+      }
+      
+      .dashboardbox p {
+        font-size: 1rem;
+        font-weight: bold;
+        margin: 0;
+        text-align: right;
+
+      }
+      .topHousescontainer {
+        display: flex;
+        flex-direction: column;
+
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1em;
+      }
+      
+      .card {
+        width: 25%;
+        height: 32em;
+        overflow-y: scroll;
+        margin-bottom: 20px;
+        margin-right: 2em;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        border-radius: 10px ;
+
+      }
+      /* .card ::-webkit-scrollbar{
+        width: 2px;
+        border-radius: 4px;
+        }
+        .card::-webkit-scrollbar-track {
+          background-color: #f1f1f1;
+          width: 2px;
+          border-radius: 4px;
+        }
+       */
+
+       /* For WebKit browsers (Chrome, Safari) */
+/* Remove the top and bottom arrow buttons */
+        .card::-webkit-scrollbar-button:start,
+        .card::-webkit-scrollbar-button:end {
+        display: none;
+        }
+
+      .heading {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin: 0em 0em 1em 0em;
+      }
+      
+     
+      
+      .house {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ffffff;
+        /* box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); */
+        border-radius: 0.5em;
+        overflow: hidden;
+        width: 100%;
+        height: 6em;
+      }
+      
+      .image {
+        width: 8em;
+        height: 5em;
+        border-radius: .4em;
+        margin: 1em;
+      }
+      
+      .details {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: 1em;
+      }
+      
+      .name {
+      font-size: 1em;
+      font-weight: bold;
+      margin: 0;
+      }
+      
+      .address {
+        font-size: .8em;
+        margin-bottom: 2px;
+      }
+      
+      .price,
+      .applicants,
+      .remaining {
+        margin: 0;
+        font-size: 0.8em;
+        color: #666666;
+      }
+      
+      
+      
